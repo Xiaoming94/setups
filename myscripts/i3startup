@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [[ ! $(pgrep -u $UID -x fcitx5) ]]; then
+	fcitx5 -d &
+	nm-applet &
+	picom &
+	dropbox &
+fi
+
