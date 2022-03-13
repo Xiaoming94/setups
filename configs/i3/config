@@ -258,7 +258,7 @@ for_window [class="Matplotlib"] floating enable border normal 2
 set $barbg #0d222a
 
 bar {
-        i3bar_command i3bar -t
+        i3bar_command i3bar
 		mode dock
 		position top
         status_command ~/.config/i3/i3_conky.sh
@@ -282,7 +282,7 @@ bar {
 			inactive_workspace $barbg $barbg    $white1
 			urgent_workspace   $barbg $barbg    $red1
 		}
-        height 22
+        height 24
 }
 
 exec --no-startup-id ~/bin/myscripts/i3startup
