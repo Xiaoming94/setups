@@ -1,0 +1,18 @@
+! Loading colorscheme
+# include ".Xresources.d/atelierlakeside-dark"
+
+! Screen settings
+Xft.dpi: 96
+
+Xft.lcdfilter:	lcddefault
+Xft.autohint: 0
+Xft.hinting: 1
+Xft.hintstyle: hintfull
+Xft.antialias: 1
+
+! RXVT-Unicode
+URxvt.scrollBar: False
+URxvt.font: xft:RobotoMono Nerd Font Mono:pixelsize=14,\
+	xft:Symbols Nerd Font:size=10,\
+	xft:Symbola:size=11, xft:Noto Sans CJK SC:size=11
+URxvt.letterSpace: 1 
