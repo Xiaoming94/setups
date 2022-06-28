@@ -1,4 +1,9 @@
 " Plugins
+function! LoadEnvPlugs()
+    if filereadable("~/.vimrc.d/specific.plugs.vimrc")
+        source ~/.vimrc.d/specific.plugs.vimrc
+    endif
+endfunction
 
 call plug#begin()
     " NERDTree
@@ -16,7 +21,7 @@ call plug#begin()
     " Colorschemes
     Plug 'sickill/vim-monokai'
     Plug 'tomasr/molokai'
-    source ~/.vimrc.d/specific.plugs.vimrc
-    
+    cal  LoadEnvPlugs()
+
 call plug#end()
 
