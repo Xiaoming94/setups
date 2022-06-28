@@ -1,5 +1,5 @@
 ! Loading colorscheme
-# include ".Xresources.d/atelierlakeside-dark"
+# include ".Xresources.d/rasi-custom"
 
 ! Screen settings
 Xft.dpi: 96
@@ -16,3 +16,11 @@ URxvt.font: xft:RobotoMono Nerd Font Mono:pixelsize=14,\
 	xft:Symbols Nerd Font:size=10,\
 	xft:Symbola:size=11, xft:Noto Sans CJK SC:size=11
 URxvt.letterSpace: 1 
+URxvt*depth: 32
+URxvt.background: [90]#101f20
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.geometry: 72x32
+URxvt.blurRadius: 5 
+URxvt.cursorBlink: 1
+URxvt.cursorUnderline: 0

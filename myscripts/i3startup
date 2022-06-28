@@ -6,5 +6,6 @@ if [[ ! $(pgrep -u $UID -x fcitx5) ]]; then
 	picom &
 	dropbox &
 	dunst &
+    pasystray &
 fi
 
