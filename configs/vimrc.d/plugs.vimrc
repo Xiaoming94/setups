@@ -16,6 +16,7 @@ call plug#begin()
     " Colorschemes
     Plug 'sickill/vim-monokai'
     Plug 'tomasr/molokai'
+    source ~/.vimrc.d/specific.plugs.vimrc
     
 call plug#end()
 
