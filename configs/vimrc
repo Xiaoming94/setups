@@ -1,0 +1,35 @@
+" .vimrc vim config file
+" Author: Xiaoming94
+
+source ~/.vimrc.d/plugs.vimrc
+
+" Set tabs
+set tabstop=4
+set softtabstop=4
+set expandtab
+
+" Powerline
+
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
+
+let g:powerline_pycmd="py3"
+let g:Powerline_symbols='fancy'
+set encoding=utf-8
+set laststatus=2
+
+
+" Colorscheme and syntax highlighting
+syntax on
+colorscheme molokai
+let g:molokai_original=1 
+
+" Mouse support
+set mouse=a
+
+" Misc options
+set splitright
+set splitbelow
+set cursorline
+set number
