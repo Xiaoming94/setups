@@ -33,3 +33,16 @@ set splitright
 set splitbelow
 set cursorline
 set number
+
+" Source configs that are environmental dependant
+function! SourceOptional()
+    if filereadable(expand("~/.vimrc.d/useradded.vimrc"))
+        source ~/.vimrc.d/useradded.vimrc
+    endif
+
+    if filereadable(expand("~/.vimrc.user"))
+        source ~/.vimrc.user
+    endif
+endfunction
+
+call SourceOptional()

@@ -1,6 +1,6 @@
 " Plugins
 function! LoadEnvPlugs()
-    if filereadable("~/.vimrc.d/specific.plugs.vimrc")
+    if filereadable(expand("~/.vimrc.d/specific.plugs.vimrc"))
         source ~/.vimrc.d/specific.plugs.vimrc
     endif
 endfunction
