@@ -206,9 +206,9 @@ bindsym $mod+Shift+Control+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Volume and Brightness
-bindsym XF86AudioMute exec pulseaudio-ctl mute
-bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up 5
-bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 5
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+bindsym XF86AudioRaiseVolume exec "sh -c 'pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%'"
+bindsym XF86AudioLowerVolume exec "sh -c 'pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%'"
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -fps 60 -dec 5
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -fps 60 -inc 5
 

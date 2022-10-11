@@ -317,6 +317,7 @@ bindsym $mod+r mode "resize"
 mode "launch" {
     bindsym w exec $web; mode "default"
     bindsym d exec discord; mode "default"
+    bindsym s exec steam; mode "default"
     bindsym Escape mode "default"
     bindsym Return mode "default"
 }
@@ -334,13 +335,12 @@ bindsym $mod+Shift+s mode "screenshot"
 # Rules for window classes
 assign [class="Chromium"] $ws2
 assign [class="firefox"] $ws2
-assign [class="KeePass2"] $ws6
-#assign [class="keepassxc"] $ws6
+assign [app_id="org.keepassxc.KeePassXC"] $ws6
 assign [class="Slack"] $ws4
 assign [class="Kodi" ] $ws5
 assign [class="discord"] $ws4
 
-for_window [class="keepassxc"] floating enable border normal 2
+for_window [app_id="org.keepassxc.KeePassXC"] floating enable border normal 2
 #
 # Status Bar:
 #
@@ -369,10 +369,10 @@ smart_borders on
 include /etc/sway/config.d/*
 exec --no-startup-id ~/bin/myscripts/swaystartup
 exec swayidle -w \
-         timeout 300 'sh ~/bin/myscripts/swayslock' \
-         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock --screenshots' \
-         lock 'sleep 1000 && sh ~/bin/myscripts/swayslock'
+         timeout 900 'sh ~/bin/myscripts/swayslock' \
+         timeout 1200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         before-sleep 'sh ~/bin/myscripts/swayslock' \
+         lock 'sh ~/bin/myscripts/swayslock'
 
 exec_always {
     gsettings set $gnomeSchema gtk-theme 'Materia-dark'
