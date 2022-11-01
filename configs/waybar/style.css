@@ -2,7 +2,7 @@
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
-    background-color: #111e23;
+    background-color: #162c2e;
 }
 
 window#waybar {
@@ -26,6 +26,12 @@ window#waybar.solo {
 }
 */
 
+.text-button {
+    border-radius: 0;
+}
+.text-button label {
+    background: none; 
+}
 
 #workspaces button {
     padding: 0 2px;
@@ -79,7 +85,7 @@ window#waybar.solo {
     padding: 0 10px;
     margin: 0px 0px;
     color: #ffffff;
-    background-color: #1a1f2f;
+    background-color: #1d3f53;
 }
 
 #window,
@@ -100,7 +106,7 @@ window#waybar.solo {
 }
 
 #battery {
-    color: #000000;
+    color: #b3e3ff;
 }
 
 #battery.charging, #battery.plugged {
@@ -211,7 +217,7 @@ label:focus {
 }
 
 #keyboard-state > label {
-    background-color: #1a1f2f;
+    background-color: #1d3f53;
 }
 
 #keyboard-state > label.locked {
