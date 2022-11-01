@@ -107,44 +107,45 @@ default_floating_border normal 1
 # Colors
 
 set $foreground #d0eeec  
-set $background #121f24
+set $background #162c2e
 
 # Black
-set $black1    #1b1d1e
-set $black2    #505354
+set $black1     #1b1d1e
+set $black2     #505354
                       
 # Red                 
-set $red1      #f92672
-set $red2      #ff5995
+set $red1       #f92672
+set $red2       #ff5995
                       
 # Green               
-set $green1    #82b414
-set $green2    #b6e354
+set $green1     #82b414
+set $green2     #b6e354
                       
 # Yellow              
-set $yellow1   #fd971f
-set $yellow2   #feed6c
+set $yellow1    #fd971f
+set $yellow2    #feed6c
                       
 # Blue                
-set $blue1     #4e82aa
-set $blue2     #0c73c2
+set $blue1      #4e82aa
+set $blue2      #0c73c2
                       
 # Magenta             
-set $magenta1  #8c54fe
-set $magenta2  #9e6ffe
+set $magenta1   #8c54fe
+set $magenta2   #9e6ffe
                       
 # Cyan                
-set $cyan1     #465457
-set $cyan2     #899ca1
+set $cyan1      #465457
+set $cyan2      #899ca1
                       
 # White               
-set $white1    #ccccc6
-set $white2    #f8f8f2
+set $white1     #ccccc6
+set $white2     #f8f8f2
 
 
 # ClientProps Colors
 # class                 border      background      text        indicator   child-border
 client.focused          $green2     $background     $foreground $cyan2      $green2
+client.unfocused        $black1     $background     $foreground $black1     $black1
 
 ### Key bindings
 #
