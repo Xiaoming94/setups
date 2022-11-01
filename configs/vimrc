@@ -34,6 +34,7 @@ set splitbelow
 set cursorline
 set number
 
+let &t_ut=''
 " Source configs that are environmental dependant
 function! SourceOptional()
     if filereadable(expand("~/.vimrc.d/useradded.vimrc"))
