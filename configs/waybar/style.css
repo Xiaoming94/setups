@@ -92,6 +92,8 @@ window#waybar.solo {
 #workspaces {
 }
 
+.module-right {
+}
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
     margin-left: 0;
