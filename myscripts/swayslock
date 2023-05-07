@@ -1,0 +1,9 @@
+#!/bin/sh
+bgimage=/tmp/background.png
+lockicon=~/.lock.icon.png
+
+grim $bgimage
+convert $bgimage -resize 10% $bgimage
+convert $bgimage -resize 1000% $bgimage
+convert $bgimage $lockicon -gravity center -compose over -composite $bgimage
+swaylock -i $bgimage --indicator-radius 100 -f

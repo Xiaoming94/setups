@@ -9,7 +9,7 @@ MY_OS=ARCH
 DESKTOP=${1:-sway}
 echo "===== SETTING UP USER SPACE FOR $USER ON $MY_OS ====="
 
-BASE_PKGLIST="zsh vim python xorg-xrdb feh"
+BASE_PKGLIST="zsh vim python xorg-xrdb feh imagemagicki archey3"
 
 case $DESKTOP in
     sway)
@@ -22,7 +22,7 @@ case $DESKTOP in
         BASE_PKGLIST=$BASE_PKGLIST" plasma-meta plasma-wayland-session"
         ;;
     xfce)
-        BASE_PKGLIST=$BASE_PKGLIST" xfce4 xfce4-goodies networkmanager network-manager-applet rofi dmenu"
+        BASE_PKGLIST=$BASE_PKGLIST" xfce4 xfce4-goodies networkmanager network-manager-applet rofi dmenu xss-lock"
         ;;
     i3)
         BASE_PKGLIST=$BASE_PKGLIST" i3 rxvt-unicode dunst picom network-manager-applet networkmanager"
@@ -104,6 +104,7 @@ ln -srf $CONFIG_DIR/xresources.d $HOME/.xresources.d
 ln -srf $CONFIG_DIR/xresources $HOME/.xresources
 
 mkdir -p $HOME/bin/myscripts # CREATING directory to put scripts etc
+ln -srf $REPO_ROOT/myscripts/* $HOME/bin/myscripts/
 
 echo "===== Setting up desktop ====="
 echo "If you are setting up an X11 desktop, remember to create an xinitrc"

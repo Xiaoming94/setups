@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [[ ! $(pgrep -u $UID -x fcitx5) ]]; then
+	fcitx5 -d &
+	nm-applet --indicator --sm-disabled &
+#	picom &
+	dropbox &
+	dunst &
+    gammastep-indicator &
+    pasystray &
+fi
+

@@ -1,0 +1,9 @@
+#!/bin/sh
+bgimage=/tmp/background.png
+lockicon=~/.lock.icon.png
+
+scrot $bgimage
+convert $bgimage -resize 20% $bgimage
+convert $bgimage -resize 500% $bgimage
+convert $bgimage $lockicon -gravity center -compose over -composite $bgimage
+i3lock -i $bgimage -f
