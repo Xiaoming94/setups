@@ -54,7 +54,16 @@ output * bg ~/.config/sway/wallpaper.png fill
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 # Default Monitor Config
-output eDP resolution 1920x1080@240Hz position 0,0 
+output DP-1 {
+    resolution 2560x1440@165Hz
+    position 0,0
+}
+output DP-2 {
+    resolution 1920x1080@120Hz
+    position 2560,0
+    transform 270
+}
+
 
 mode "outPut CFG" {
     bindsym 2 output HDMI-A-1 resolution 2560x1440@144Hz position 0,0; output eDP resolution 1920x1080@240Hz position 2560,0; mode "default"
@@ -159,7 +168,7 @@ client.unfocused        $background $background     $foreground $blue1      $bac
 
     # Start your launcher
     bindsym $mod+p exec $menu
-    bindsym $mod+d exec wofi --show drun
+    bindsym $mod+d exec wofi --show drun -I
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -335,7 +344,7 @@ bindsym $mod+Shift+s mode "screenshot"
 
 # Rules for window classes
 assign [class="Chromium"] $ws2
-assign [class="firefox"] $ws2
+assign [app_id="firefox"] $ws2
 assign [app_id="org.keepassxc.KeePassXC"] $ws6
 assign [class="Slack"] $ws4
 assign [class="Kodi" ] $ws5
@@ -382,7 +391,7 @@ exec swayidle -w \
          lock 'sh ~/bin/myscripts/swayslock'
 
 exec_always {
-    gsettings set $gnomeSchema gtk-theme 'Adapta-Lime-Nokto'
+    gsettings set $gnomeSchema gtk-theme 'Adapta-Pink-Nokto'
     gsettings set $gnomeSchema icon-theme 'Numix-Circle'
     gsettings set $gnomeSchema cursor-theme 'Adwaita'
     gsettings set $gnomeSchema font-name 'Noto sans, 10'
