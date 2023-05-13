@@ -342,6 +342,8 @@ assign [class="Kodi" ] $ws5
 assign [class="discord"] $ws4
 
 for_window [app_id="org.keepassxc.KeePassXC"] floating enable border normal 2
+for_window [class="^.*"] inhibit_idle fullscreen
+for_window [app_id="^.*"] inhibit_idle fullscreen
 #
 # Status Bar:
 #
