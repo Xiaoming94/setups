@@ -9,7 +9,7 @@ MY_OS=ARCH
 DESKTOP=${1:-sway}
 echo "===== SETTING UP USER SPACE FOR $USER ON $MY_OS ====="
 
-BASE_PKGLIST="zsh vim python xorg-xrdb feh imagemagicki archey3"
+BASE_PKGLIST="zsh vim python xorg-xrdb feh imagemagick archey3"
 
 case $DESKTOP in
     sway)
@@ -72,18 +72,9 @@ fi
 echo "packages installed"
 
 # Setting up different components and symlinking configs
-
+cd $HOME
 REPO_ROOT=$(git rev-parse --show-toplevel)
 CONFIG_DIR=$REPO_ROOT/configs
-echo "===== installing oh-my-zsh ====="
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-echo "source ~/.myzshrc" >> .zshrc          # Sourcing personal config file
-ln -srf $CONFIG_DIR/myzshrc $HOME/.myzshrc     # symlinking personal config file
-
-echo "ZSH and oh-my-zsh is setup and running, setup themes and plugins yourself"
-echo "Any config should be done through .myzshrc"
 # Setting up vim with vim-plugs
 
 echo "===== Setting up vim ====="
@@ -93,9 +84,10 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 ln -srf $CONFIG_DIR/vimrc.d $HOME/.vimrc.d
 ln -srf $CONFIG_DIR/vimrc $HOME/.vimrc
+ln -srf $CONFIG_DIR/myzshrc $HOME/.myzshrc     # symlinking personal config file
 tourch $HOME/.vimrc.user
 # Running vim to download all the plugins
-vim +'PlugInstall --sync' +qa
+#vim +'PlugInstall --sync' +qa
 
 # Setting up desktop
 USER_CONFIG=$HOME/.config
@@ -126,4 +118,12 @@ case $DESKTOP in
         echo "You are setting up something that is not sway or i3"
         ;;
 esac
+echo "===== installing oh-my-zsh ====="
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+echo "source ~/.myzshrc" >> .zshrc          # Sourcing personal config file
+
+echo "ZSH and oh-my-zsh is setup and running, setup themes and plugins yourself"
+echo "Any config should be done through .myzshrc"
 
