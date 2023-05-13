@@ -383,6 +383,7 @@ smart_gaps on
 gaps inner 0
 gaps outer 0
 
+
 include /etc/sway/config.d/*
 exec --no-startup-id ~/bin/myscripts/swaystartup
 exec swayidle -w \
