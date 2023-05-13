@@ -1,7 +1,7 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-size: 15px;
     background-color: #162c2e;
 }
 
@@ -34,36 +34,35 @@ window#waybar.solo {
 }
 
 #workspaces button {
-    padding: 0 2px;
+    padding: 2px 8px;
     color: #ffffff;
     /* Use box-shadow instead of border so the text isn't offset */
     box-shadow: inset 0 -3px transparent;
     /* Avoid rounded borders under each workspace name */
-    border-radius: 0;
-    border-top: 2px;
-    border-left: 0;
-    border-right: 0;
+    border-radius: 10px;
+    border: solid 2px transparent;
     margin-right: 2px;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-    color: #23a1d1;
-    border-color: #0a0f15;
+    background-color: #0c73c2;
 }
 
 #workspaces button.focused {
-    border-bottom: solid 2px;
-    border-color: #1ae2a1;
+    background-color: #82b414;
 }
 
 #workspaces button.urgent {
+    background-color: #ff5995;
 }
 
 #mode {
     background-color: rgba(255,92,100,0.8);
-    border-bottom: 3px solid #ffffff;
+    border-radius: 10px;
+    border: solid 2px transparent;
     padding: 0 5px;
+    margin-right: 10px;
 }
 
 #clock,
@@ -82,17 +81,22 @@ window#waybar.solo {
 #keyboard-state,
 #idle_inhibitor,
 #mpd {
-    padding: 0 10px;
-    margin: 0px 0px;
+    padding: 0 15px;
+    margin: 4px 4px;
+    border-radius: 20px;
     color: #ffffff;
     background-color: #1d3f53;
 }
 
 #window,
 #workspaces {
+    margin-right: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
-.module-right {
+.modules-right {
+    background-color: #1d3f53;
 }
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
@@ -178,6 +182,9 @@ label:focus {
 }
 
 #tray {
+    background: inherit;
+    border-radius: 20px;
+    border: 2px solid transparent;
 }
 
 #tray > .passive {
@@ -186,6 +193,10 @@ label:focus {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
+}
+#tray > * {
+    background-color: #1d3f53;
+
 }
 
 #idle_inhibitor {
