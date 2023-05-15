@@ -24,7 +24,7 @@ set $rofi rofi -show
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $menu wofi --show run,drun
 # Default Web Browser
-set $web firefox
+set $web env MOZ_ENABLE_WAYLAND=1 firefox
 
 # Workspace names
 
