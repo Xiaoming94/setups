@@ -1,7 +1,7 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 15px;
+    font-size: 12px;
     background-color: #162c2e;
 }
 
@@ -82,7 +82,7 @@ window#waybar.solo {
 #idle_inhibitor,
 #mpd {
     padding: 0 15px;
-    margin: 4px 4px;
+    margin: 4px 2px;
     border-radius: 20px;
     color: #ffffff;
     background-color: #1d3f53;
@@ -185,6 +185,7 @@ label:focus {
     background: inherit;
     border-radius: 20px;
     border: 2px solid transparent;
+    margin-right: 0px;
 }
 
 #tray > .passive {
