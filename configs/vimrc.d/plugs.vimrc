@@ -21,7 +21,7 @@ call plug#begin()
     " Colorschemes
     Plug 'sickill/vim-monokai'
     Plug 'tomasr/molokai'
-    cal  LoadEnvPlugs()
+    call  LoadEnvPlugs()
 
 call plug#end()
 
