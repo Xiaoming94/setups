@@ -380,7 +380,9 @@ bar {
 
 smart_borders on
 smart_gaps on
-gaps inner 10
+gaps inner 12
+gaps outer 8
+
 
 include /etc/sway/config.d/*
 exec --no-startup-id ~/bin/myscripts/swaystartup
