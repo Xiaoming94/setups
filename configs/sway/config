@@ -101,8 +101,8 @@ input * {
 }
 
 # Window Borders and colors
-default_border pixel 2
-default_floating_border normal 2
+default_border pixel 1
+default_floating_border normal 1
 
 # Colors
 
@@ -145,7 +145,7 @@ set $white2     #f8f8f2
 # ClientProps Colors
 # class                 border      background      text        indicator   child-border
 client.focused          $green2     $background     $foreground $cyan2      $green2
-client.unfocused        $black1     $background     $foreground $black1     $black1
+client.unfocused        $background $background     $foreground $blue1      $background
 
 ### Key bindings
 #
@@ -368,6 +368,10 @@ bar {
 #}
 
 smart_borders on
+smart_gaps on
+gaps inner 0
+gaps outer 0
+
 
 include /etc/sway/config.d/*
 exec --no-startup-id ~/bin/myscripts/swaystartup
