@@ -34,6 +34,9 @@ set splitbelow
 set cursorline
 set number
 
+" Set vim swap directory
+set directory^=$HOME/.vim/swap//
+
 let &t_ut=''
 " Source configs that are environmental dependant
 function! SourceOptional()
