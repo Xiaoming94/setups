@@ -110,8 +110,8 @@ input * {
 }
 
 # Window Borders and colors
-default_border pixel 1
-default_floating_border normal 1
+default_border pixel 2
+default_floating_border normal 2
 
 # Colors
 
