@@ -101,8 +101,8 @@ input * {
 }
 
 # Window Borders and colors
-default_border pixel 1
-default_floating_border normal 1
+default_border pixel 2
+default_floating_border normal 2
 
 # Colors
 
@@ -261,7 +261,7 @@ client.unfocused        $black1     $background     $foreground $black1     $bla
     bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
+    bindsym $mod+Shift+space floating toggle; border normal 2px
 
     # Swap focus between the tiling area and the floating area
     bindsym $mod+space focus mode_toggle
