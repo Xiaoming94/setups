@@ -24,7 +24,7 @@ set $rofi rofi -show
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $menu wofi --show run,drun
 # Default Web Browser
-set $web env MOZ_ENABLE_WAYLAND=1 firefox
+set $web firefox
 
 # Workspace names
 
@@ -110,8 +110,8 @@ input * {
 }
 
 # Window Borders and colors
-default_border pixel 2
-default_floating_border normal 2
+default_border pixel 1
+default_floating_border normal 1
 
 # Colors
 
@@ -344,7 +344,7 @@ bindsym $mod+Shift+s mode "screenshot"
 
 # Rules for window classes
 assign [class="Chromium"] $ws2
-assign [app_id="firefox"] $ws2
+assign [class="firefox"] $ws2
 assign [app_id="org.keepassxc.KeePassXC"] $ws6
 assign [class="Slack"] $ws4
 assign [class="Kodi" ] $ws5
