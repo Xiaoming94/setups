@@ -386,4 +386,5 @@ exec_always {
     gsettings set $gnomeSchema icon-theme 'Numix-Circle'
     gsettings set $gnomeSchema cursor-theme 'Adwaita'
     gsettings set $gnomeSchema font-name 'Noto sans, 10'
+    export XDG_CURRENT_DESKTOP=sway
 }
