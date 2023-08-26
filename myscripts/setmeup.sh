@@ -72,22 +72,11 @@ fi
 echo "packages installed"
 
 # Setting up different components and symlinking configs
-cd $HOME
 REPO_ROOT=$(git rev-parse --show-toplevel)
 CONFIG_DIR=$REPO_ROOT/configs
-# Setting up vim with vim-plugs
+cd $HOME
 
-echo "===== Setting up vim ====="
-
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-ln -srf $CONFIG_DIR/vimrc.d $HOME/.vimrc.d
-ln -srf $CONFIG_DIR/vimrc $HOME/.vimrc
-ln -srf $CONFIG_DIR/myzshrc $HOME/.myzshrc     # symlinking personal config file
-tourch $HOME/.vimrc.user
-# Running vim to download all the plugins
-#vim +'PlugInstall --sync' +qa
+sh $REPO_ROOT/setupvim.sh
 
 # Setting up desktop
 USER_CONFIG=$HOME/.config
