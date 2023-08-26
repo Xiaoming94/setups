@@ -85,7 +85,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 ln -s $CONFIG_DIR/vimrc.d $HOME/.vimrc.d
 ln -s $CONFIG_DIR/vimrc $HOME/.vimrc
 ln -s $CONFIG_DIR/myzshrc $HOME/.myzshrc     # symlinking personal config file
-tourch $HOME/.vimrc.user
+touch $HOME/.vimrc.user
 # Running vim to download all the plugins
 #vim +'PlugInstall --sync' +qa
 
