@@ -76,6 +76,8 @@ REPO_ROOT=$(git rev-parse --show-toplevel)
 CONFIG_DIR=$REPO_ROOT/configs
 cd $HOME
 
+sh $REPO_ROOT/setupvim.sh
+
 # Setting up desktop
 USER_CONFIG=$HOME/.config
 mkdir -p $USER_CONFIG
