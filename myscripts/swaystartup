@@ -3,10 +3,12 @@
 if [[ ! $(pgrep -u $UID -x fcitx5) ]]; then
 	fcitx5 -d &
 	nm-applet --indicator --sm-disabled &
-#	picom &
+    udiskie &
 	dropbox &
 	dunst &
     gammastep-indicator &
     pasystray &
+    sleep 20
+    nextcloud &
 fi
 
