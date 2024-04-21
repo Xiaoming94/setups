@@ -100,6 +100,11 @@ input * {
     xkb_options "grp:win_space_toggle"
 }
 
+input "SteelSeries SteelSeries Aerox 3 Wireless" {
+    accel_profile "flat"
+    pointer_accel 0.0
+}
+
 # Window Borders and colors
 default_border pixel 1
 default_floating_border normal 1
@@ -378,6 +383,7 @@ exec --no-startup-id ~/bin/myscripts/swaystartup
 exec swayidle -w \
          timeout 900 'sh ~/bin/myscripts/swayslock' \
          timeout 1200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         timeout 1800 'systemctl suspend' \
          before-sleep 'sh ~/bin/myscripts/swayslock' \
          lock 'sh ~/bin/myscripts/swayslock'
 

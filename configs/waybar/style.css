@@ -1,11 +1,12 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Roboto, FontAwesome, Helvetica, sans-serif;
+    font-family: RobotoMono Nerd Font, FontAwesome, Helvetica, sans-serif;
     font-size: 12px;
     background-color: #162c2e;
 }
 
 window#waybar {
+    background-color: transparent;
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -173,6 +174,15 @@ label:focus {
 }
 
 #custom-media.custom-vlc {
+}
+
+#custom-notification {
+    margin: 0px 5px 0px 1px;
+    padding-right: 10px;
+}
+
+#custom-notification button:hover {
+    background-color: #1d3f53;
 }
 
 #temperature {

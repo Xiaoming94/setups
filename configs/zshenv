@@ -2,12 +2,13 @@ export SDL_IM_MODULE=fcitx
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export GTEST_COLOR=yes
 
-export EDITOR=vim
+export VISUAL=vim
+export EDITOR=$VISUAL
 export PATH=$PATH:~/bin
 export PATH=$PATH:/home/xiaoming/bin/myscripts:/opt/bin/kf5:/home/xiaoming/.gem/ruby/2.3.0/bin/
 export PATH=$PATH:/home/xiaoming/.gem/ruby/2.4.0/bin/
+export PE_DIR=/home/xiaoming/Documents/ProgrammingExercises/
 
-PE_DIR=/home/xiaoming/Documents/ProgrammingExercises/
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 export QT_QPA_PLATFORMTHEME=gtk2
 
