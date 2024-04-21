@@ -22,6 +22,7 @@ alias initrbenv='eval "$(rbenv init -)"'
 alias matlab='~/bin/myscripts/matlab -nosplash -nodesktop'
 alias matlabgui='~/bin/myscripts/matlab'
 alias sysupg='pacaur -Syu --noedit --noconfirm'
+alias setupmirror='wl-mirror DP-1 &'
 
 # Define vim aliases
 if [ -f ~/.EverVim.vimrc ]; then
