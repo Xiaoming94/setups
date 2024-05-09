@@ -13,7 +13,7 @@ BASE_PKGLIST="zsh vim python xorg-xrdb feh imagemagick archey3"
 
 case $DESKTOP in
     sway)
-        BASE_PKGLIST=$BASE_PKGLIST" sway waybar kitty dunst network-manager-applet networkmanager"
+        BASE_PKGLIST=$BASE_PKGLIST" sway waybar kitty swaync network-manager-applet networkmanager"
         ;;
     gnome)
         BASE_PKGLIST=$BASE_PKGLIST" gnome gnome-extra"
@@ -74,9 +74,10 @@ echo "packages installed"
 # Setting up different components and symlinking configs
 REPO_ROOT=$(git rev-parse --show-toplevel)
 CONFIG_DIR=$REPO_ROOT/configs
+SCRIPTS_DIR=$REPO_ROOT/myscripts
 cd $HOME
 
-sh $REPO_ROOT/setupvim.sh
+sh $SCRIPTS_DIR/setupvim.sh
 
 # Setting up desktop
 USER_CONFIG=$HOME/.config
