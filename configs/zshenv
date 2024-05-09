@@ -4,8 +4,5 @@ export RANGER_LOAD_DEFAULT_RC=FALSE
 # Big ENV Variables per shell, (TODO: Move path to zshrc?)
 export VISUAL=vim
 export EDITOR=$VISUAL
-export PATH=$PATH:~/bin:/home/xiaoming/bin/myscripts
 
 # MISC
-export GTEST_COLOR=yes
-export PE_DIR=/home/xiaoming/Documents/ProgrammingExercises/
