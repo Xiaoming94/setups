@@ -82,11 +82,11 @@ sh $SCRIPTS_DIR/setupvim.sh
 # Setting up desktop
 USER_CONFIG=$HOME/.config
 mkdir -p $USER_CONFIG
-ln -srf $CONFIG_DIR/xresources.d $HOME/.xresources.d
-ln -srf $CONFIG_DIR/xresources $HOME/.xresources
+ln -s $CONFIG_DIR/xresources.d $HOME/.xresources.d
+ln -s $CONFIG_DIR/xresources $HOME/.xresources
 
 mkdir -p $HOME/bin/myscripts # CREATING directory to put scripts etc
-ln -srf $REPO_ROOT/myscripts/* $HOME/bin/myscripts/
+ln -s $REPO_ROOT/myscripts/* $HOME/bin/myscripts/
 
 echo "===== Setting up desktop ====="
 echo "If you are setting up an X11 desktop, remember to create an xinitrc"
@@ -94,20 +94,25 @@ echo "If you are setting up an X11 desktop, remember to create an xinitrc"
 case $DESKTOP in
     i3)
         echo "Setting up i3, remember to create an .xinitrc"
-        ln -srf $CONFIG_DIR/i3 $USER_CONFIG/i3
-        ln -srf $CONFIG_DIR/conky $USER_CONFIG/conky
-        ln -srf $CONFIG_DIR/picom $USER_CONFIG/picom
+        ln -s $CONFIG_DIR/i3 $USER_CONFIG/i3
+        ln -s $CONFIG_DIR/conky $USER_CONFIG/conky
+        ln -s $CONFIG_DIR/picom $USER_CONFIG/picom
         ;;
     sway)
         echo "Setting up sway"
-        ln -srf $CONFIG_DIR/sway $USER_CONFIG/sway
-        ln -srf $CONFIG_DIR/waybar $USER_CONFIG/waybar
-        ln -srf $CONFIG_DIR/wofi $USER_CONFIG/wofi
+        ln -s $CONFIG_DIR/sway $USER_CONFIG/sway
+        ln -s $CONFIG_DIR/waybar $USER_CONFIG/waybar
+        ln -s $CONFIG_DIR/wofi $USER_CONFIG/wofi
         ;;
     *)
         echo "You are setting up something that is not sway or i3"
         ;;
 esac
+echo "===== Setting up zsh symlinks ===="
+ln -s $CONFIG_DIR/zshenv $HOME/.zshenv
+ln -s $CONFIG_DIR/zprofile $HOME/.zprofile
+ln -s $CONFIG_DIR/myzshrc $HOME/.myzshrc
+
 echo "===== installing oh-my-zsh ====="
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
