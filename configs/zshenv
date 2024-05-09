@@ -1,15 +1,11 @@
-export SDL_IM_MODULE=fcitx
+# Ranger (Can these be in it's own file?)
 export RANGER_LOAD_DEFAULT_RC=FALSE
-export GTEST_COLOR=yes
 
+# Big ENV Variables per shell, (TODO: Move path to zshrc?)
 export VISUAL=vim
 export EDITOR=$VISUAL
-export PATH=$PATH:~/bin
-export PATH=$PATH:/home/xiaoming/bin/myscripts:/opt/bin/kf5:/home/xiaoming/.gem/ruby/2.3.0/bin/
-export PATH=$PATH:/home/xiaoming/.gem/ruby/2.4.0/bin/
+export PATH=$PATH:~/bin:/home/xiaoming/bin/myscripts
+
+# MISC
+export GTEST_COLOR=yes
 export PE_DIR=/home/xiaoming/Documents/ProgrammingExercises/
-
-export QT_AUTO_SCREEN_SCALE_FACTOR=0
-export QT_QPA_PLATFORMTHEME=gtk2
-
-export LD_LIBRARY_PATH=/opt/cuda/lib64
