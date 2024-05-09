@@ -112,6 +112,7 @@ echo "===== installing oh-my-zsh ====="
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+echo "SETUP_REPO=$REPO_ROOT" >> .zshrc       # Remember the config repo directory
 echo "source ~/.myzshrc" >> .zshrc          # Sourcing personal config file
 
 echo "ZSH and oh-my-zsh is setup and running, setup themes and plugins yourself"
