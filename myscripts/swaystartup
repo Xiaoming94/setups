@@ -5,7 +5,7 @@ if [[ ! $(pgrep -u $UID -x fcitx5) ]]; then
 	nm-applet --indicator --sm-disabled &
     udiskie &
 	dropbox &
-	dunst &
+    swaync & 
     gammastep-indicator &
     pasystray &
     sleep 20

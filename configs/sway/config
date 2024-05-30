@@ -124,41 +124,41 @@ set $foreground #d0eeec
 set $background #162c2e
 
 # Black
-set $black1     #1b1d1e
-set $black2     #505354
+set $black1     #363636
+set $black2     #424242
                       
 # Red                 
-set $red1       #f92672
-set $red2       #ff5995
+set $red1       #ff0883
+set $red2       #ff1e8e
                       
 # Green               
-set $green1     #82b414
-set $green2     #b6e354
+set $green1     #83ff08
+set $green2     #83ff1e
                       
 # Yellow              
-set $yellow1    #fd971f
-set $yellow2    #feed6c
+set $yellow1    #ff8308
+set $yellow2    #ff8e1e
                       
 # Blue                
-set $blue1      #4e82aa
-set $blue2      #0c73c2
+set $blue1      #0883ff
+set $blue2      #1e8eff
                       
 # Magenta             
-set $magenta1   #8c54fe
-set $magenta2   #9e6ffe
+set $magenta1   #8308ff
+set $magenta2   #8e1eff
                       
 # Cyan                
-set $cyan1      #465457
-set $cyan2      #899ca1
+set $cyan1      #08ff83
+set $cyan2      #1eff8e
                       
 # White               
-set $white1     #ccccc6
-set $white2     #f8f8f2
+set $white1     #b6b6b6
+set $white2     #c2c2c2
 
 
 # ClientProps Colors
 # class                 border      background      text        indicator   child-border
-client.focused          $green2     $background     $foreground $cyan2      $green2
+client.focused          $cyan1     $background     $foreground  $magenta2      $cyan1
 client.unfocused        $background $background     $foreground $blue1      $background
 
 ### Key bindings
@@ -398,7 +398,7 @@ exec swayidle -w \
          lock 'sh ~/bin/myscripts/swayslock'
 
 exec_always {
-    gsettings set $gnomeSchema gtk-theme 'Adapta-Pink-Nokto'
+    gsettings set $gnomeSchema gtk-theme 'Kripton'
     gsettings set $gnomeSchema icon-theme 'Numix-Circle'
     gsettings set $gnomeSchema cursor-theme 'Adwaita'
     gsettings set $gnomeSchema font-name 'Noto sans, 10'
