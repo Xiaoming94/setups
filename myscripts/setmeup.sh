@@ -13,7 +13,7 @@ BASE_PKGLIST="zsh vim python xorg-xrdb feh imagemagick archey3"
 
 case $DESKTOP in
     sway)
-        BASE_PKGLIST=$BASE_PKGLIST" sway waybar kitty dunst network-manager-applet networkmanager"
+        BASE_PKGLIST=$BASE_PKGLIST" sway waybar kitty swaync network-manager-applet networkmanager"
         ;;
     gnome)
         BASE_PKGLIST=$BASE_PKGLIST" gnome gnome-extra"
@@ -74,18 +74,19 @@ echo "packages installed"
 # Setting up different components and symlinking configs
 REPO_ROOT=$(git rev-parse --show-toplevel)
 CONFIG_DIR=$REPO_ROOT/configs
+SCRIPTS_DIR=$REPO_ROOT/myscripts
 cd $HOME
 
-sh $REPO_ROOT/setupvim.sh
+sh $SCRIPTS_DIR/setupvim.sh
 
 # Setting up desktop
 USER_CONFIG=$HOME/.config
 mkdir -p $USER_CONFIG
-ln -srf $CONFIG_DIR/xresources.d $HOME/.xresources.d
-ln -srf $CONFIG_DIR/xresources $HOME/.xresources
+ln -s $CONFIG_DIR/xresources.d $HOME/.xresources.d
+ln -s $CONFIG_DIR/xresources $HOME/.xresources
 
 mkdir -p $HOME/bin/myscripts # CREATING directory to put scripts etc
-ln -srf $REPO_ROOT/myscripts/* $HOME/bin/myscripts/
+ln -s $REPO_ROOT/myscripts/* $HOME/bin/myscripts/
 
 echo "===== Setting up desktop ====="
 echo "If you are setting up an X11 desktop, remember to create an xinitrc"
@@ -93,24 +94,30 @@ echo "If you are setting up an X11 desktop, remember to create an xinitrc"
 case $DESKTOP in
     i3)
         echo "Setting up i3, remember to create an .xinitrc"
-        ln -srf $CONFIG_DIR/i3 $USER_CONFIG/i3
-        ln -srf $CONFIG_DIR/conky $USER_CONFIG/conky
-        ln -srf $CONFIG_DIR/picom $USER_CONFIG/picom
+        ln -s $CONFIG_DIR/i3 $USER_CONFIG/i3
+        ln -s $CONFIG_DIR/conky $USER_CONFIG/conky
+        ln -s $CONFIG_DIR/picom $USER_CONFIG/picom
         ;;
     sway)
         echo "Setting up sway"
-        ln -srf $CONFIG_DIR/sway $USER_CONFIG/sway
-        ln -srf $CONFIG_DIR/waybar $USER_CONFIG/waybar
-        ln -srf $CONFIG_DIR/wofi $USER_CONFIG/wofi
+        ln -s $CONFIG_DIR/sway $USER_CONFIG/sway
+        ln -s $CONFIG_DIR/waybar $USER_CONFIG/waybar
+        ln -s $CONFIG_DIR/wofi $USER_CONFIG/wofi
         ;;
     *)
         echo "You are setting up something that is not sway or i3"
         ;;
 esac
+echo "===== Setting up zsh symlinks ===="
+ln -s $CONFIG_DIR/zshenv $HOME/.zshenv
+ln -s $CONFIG_DIR/zprofile $HOME/.zprofile
+ln -s $CONFIG_DIR/myzshrc $HOME/.myzshrc
+
 echo "===== installing oh-my-zsh ====="
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+echo "SETUP_REPO=$REPO_ROOT" >> .zshrc       # Remember the config repo directory
 echo "source ~/.myzshrc" >> .zshrc          # Sourcing personal config file
 
 echo "ZSH and oh-my-zsh is setup and running, setup themes and plugins yourself"

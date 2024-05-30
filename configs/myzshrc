@@ -28,9 +28,11 @@ alias setupmirror='wl-mirror DP-1 &'
 if [ -f ~/.EverVim.vimrc ]; then
     alias vimd='vim -c "NERDTreeToggle"'
 fi
-# Exports, Defining exports and variables
 
-
+# Shell specific environmental variables
+PATH=$PATH:~/bin:/home/xiaoming/bin/myscripts
+PE_DIR=/home/xiaoming/Documents/ProgrammingExercises/
+GTEST_COLOR=yes
 
 unset GREP_OPTIONS
 
@@ -41,4 +43,3 @@ fi
 #JAVA
 
 #export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Xms128m -Xmx4096m"
-
