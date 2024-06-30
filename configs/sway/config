@@ -387,9 +387,3 @@ exec swayidle -w \
          before-sleep 'sh ~/bin/myscripts/swayslock' \
          lock 'sh ~/bin/myscripts/swayslock'
 
-exec_always {
-    gsettings set $gnomeSchema gtk-theme 'Adapta-Lime-Nokto'
-    gsettings set $gnomeSchema icon-theme 'Numix-Circle'
-    gsettings set $gnomeSchema cursor-theme 'Adwaita'
-    gsettings set $gnomeSchema font-name 'Noto sans, 10'
-}
