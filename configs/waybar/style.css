@@ -2,7 +2,7 @@
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: RobotoMono Nerd Font, FontAwesome, Helvetica, sans-serif;
     font-size: 12px;
-    background-color: #162c2e;
+    background-color: #021d2a;
 }
 
 window#waybar {
@@ -40,18 +40,18 @@ window#waybar.solo {
     /* Use box-shadow instead of border so the text isn't offset */
     box-shadow: inset 0 -3px transparent;
     /* Avoid rounded borders under each workspace name */
-    border-radius: 10px;
+    border-radius: 14px;
     border: solid 2px transparent;
     margin-right: 2px;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-    background-color: #0c73c2;
+    background-color: #163d5d;
 }
 
 #workspaces button.focused {
-    background-color: #82b414;
+    background-color: #15947f;
 }
 
 #workspaces button.urgent {
@@ -86,7 +86,7 @@ window#waybar.solo {
     margin: 4px 2px;
     border-radius: 20px;
     color: #ffffff;
-    background-color: #1d3f53;
+    background-color: #003c50;
 }
 
 #window,
@@ -97,7 +97,7 @@ window#waybar.solo {
 }
 
 .modules-right {
-    background-color: #1d3f53;
+    background-color: transparent;
 }
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
