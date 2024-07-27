@@ -1,13 +1,19 @@
+/*Defining colors*/
+$barbg-color: #02142477;
+$widget-bg-color: #081b25d0;
+$main-font-color: #ffffff;
+$font-color-2:#23a2f1;
+
 * {
   /* `otf-font-awesome` is required to be installed for icons */
-  font-family: RobotoMono Nerd Font, FontAwesome, Helvetica, sans-serif;
+  font-family: FiraCode Nerd Font, FontAwesome, Helvetica, sans-serif;
   font-size: 12px;
   background-color: transparent;
 }
 
 window#waybar {
-  background-color: rgba(1, 14, 20, 0.65);
-  color: #ffffff;
+  background-color: $barbg-color;
+  color: $main-font-color;
   transition-property: background-color;
   transition-duration: .5s;
   border-bottom: 2px;
@@ -45,7 +51,7 @@ window#waybar.solo {
   /* Avoid rounded borders under each workspace name */
   border-radius: 7px;
   border: solid 2px transparent;
-  margin: 2px 2px;
+  margin: 0px 2px;
 
   &:hover {
     background-color: #163d5d;
@@ -63,25 +69,24 @@ window#waybar.solo {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 
 #mode {
-  background-color: rgba(255, 92, 100, 0.8);
+  background-color: rgba(131, 22, 82, 0.548);
   border-radius: 10px;
   border: solid 2px transparent;
   padding: 0 5px;
-  margin-right: 10px;
+  margin: 4px 8px;
 }
 
-#clock, #battery, #cpu, #memory, #disk, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #language, #keyboard-state, #idle_inhibitor, #mpd {
+#clock, #battery, #cpu, #memory, #disk, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #language, #keyboard-state, #idle_inhibitor, #mpd {
   padding: 0 15px;
   margin: 4px 2px;
   border-radius: 10px;
-  color: #ffffff;
-  background-color: #003c50;
+  color: $main-font-color;
+  background-color: $widget-bg-color;
 }
 
 #window, #workspaces {
-  margin-right: 10px;
-  margin-top: 2px;
-  margin-bottom: 2px;
+    margin: 4px 2px;
+
 }
 
 .modules-right {
@@ -100,17 +105,24 @@ window#waybar.solo {
   margin-right: 0;
 }
 
-#clock {}
+#clock {
+    
+}
+
+/*Battery colors*/
+$battery-full: #35d88c;
+$battery-plugged: #ffffff;
+$battery-critical: #f52b67;
 
 #battery {
-  color: #b3e3ff;
+  color: $battery-full;
 
   &.charging, &.plugged {
-    color: #ffffff;
+    color: $battery-plugged;
   }
 
   &.critical:not(.charging) {
-    color: #f151a1;
+    color: $battery-critical;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -128,13 +140,13 @@ window#waybar.solo {
 label:focus {}
 
 #cpu {
-  color: #23a2f1;
+  color: $font-color-2;
 }
 
 #memory, #disk, #backlight, #network.disconnected {}
 
 #pulseaudio {
-  color: #23a2f1;
+  color: $font-color-2;
 
   &.muted {
     color: #2a5c45;
@@ -207,4 +219,9 @@ label:focus {}
       color: #FFFF00;
     }
   }
+}
+
+tooltip {
+    background-color: rgba(1, 14, 20, 0.8);
+    border-radius: 10px;
 }

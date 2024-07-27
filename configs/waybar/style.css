@@ -1,12 +1,13 @@
+/*Defining colors*/
 * {
   /* `otf-font-awesome` is required to be installed for icons */
-  font-family: RobotoMono Nerd Font, FontAwesome, Helvetica, sans-serif;
+  font-family: FiraCode Nerd Font, FontAwesome, Helvetica, sans-serif;
   font-size: 12px;
   background-color: transparent;
 }
 
 window#waybar {
-  background-color: rgba(1, 14, 20, 0.65);
+  background-color: rgba(2, 20, 36, 0.4666666667);
   color: #ffffff;
   transition-property: background-color;
   transition-duration: 0.5s;
@@ -40,7 +41,7 @@ window#waybar.solo {
   /* Avoid rounded borders under each workspace name */
   border-radius: 7px;
   border: solid 2px transparent;
-  margin: 2px 2px;
+  margin: 0px 2px;
 }
 #workspaces button:hover {
   background-color: #163d5d;
@@ -54,25 +55,23 @@ window#waybar.solo {
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #mode {
-  background-color: rgba(255, 92, 100, 0.8);
+  background-color: rgba(131, 22, 82, 0.548);
   border-radius: 10px;
   border: solid 2px transparent;
   padding: 0 5px;
-  margin-right: 10px;
+  margin: 4px 8px;
 }
 
-#clock, #battery, #cpu, #memory, #disk, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #language, #keyboard-state, #idle_inhibitor, #mpd {
+#clock, #battery, #cpu, #memory, #disk, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #language, #keyboard-state, #idle_inhibitor, #mpd {
   padding: 0 15px;
   margin: 4px 2px;
   border-radius: 10px;
   color: #ffffff;
-  background-color: #003c50;
+  background-color: rgba(8, 27, 37, 0.8156862745);
 }
 
 #window, #workspaces {
-  margin-right: 10px;
-  margin-top: 2px;
-  margin-bottom: 2px;
+  margin: 4px 2px;
 }
 
 .modules-right {
@@ -89,14 +88,15 @@ window#waybar.solo {
   margin-right: 0;
 }
 
+/*Battery colors*/
 #battery {
-  color: #b3e3ff;
+  color: #35d88c;
 }
 #battery.charging, #battery.plugged {
   color: #ffffff;
 }
 #battery.critical:not(.charging) {
-  color: #f151a1;
+  color: #f52b67;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -170,6 +170,11 @@ window#waybar.solo {
 }
 #keyboard-state > label.locked {
   color: #FFFF00;
+}
+
+tooltip {
+  background-color: rgba(1, 14, 20, 0.8);
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
