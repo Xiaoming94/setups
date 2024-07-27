@@ -2,11 +2,11 @@
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: RobotoMono Nerd Font, FontAwesome, Helvetica, sans-serif;
     font-size: 12px;
-    background-color: #021d2a;
+    background-color: transparent;
 }
 
 window#waybar {
-    background-color: transparent;
+    background-color: rgba(2,29,42,0.5);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -35,14 +35,14 @@ window#waybar.solo {
 }
 
 #workspaces button {
-    padding: 2px 8px;
+    padding: 0px 12px;
     color: #ffffff;
     /* Use box-shadow instead of border so the text isn't offset */
     box-shadow: inset 0 -3px transparent;
     /* Avoid rounded borders under each workspace name */
     border-radius: 14px;
     border: solid 2px transparent;
-    margin-right: 2px;
+    margin: 2px 4px;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -192,7 +192,7 @@ label:focus {
 }
 
 #tray {
-    background: inherit;
+    background: transparent;
     border-radius: 20px;
     border: 2px solid transparent;
     margin-right: 0px;
@@ -206,8 +206,8 @@ label:focus {
     -gtk-icon-effect: highlight;
 }
 #tray > * {
-    background-color: #1d3f53;
-
+    background-color: transparent;
+    margin-left: 1px;
 }
 
 #idle_inhibitor {

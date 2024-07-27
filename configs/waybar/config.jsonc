@@ -5,9 +5,9 @@
     // "width": 1280, // Waybar width
     "spacing": 0, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/window", "custom/media"],
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/window", "hyprland/workspaces", "hyprland/window", "custom/media"],
     "modules-center": ["clock", "idle_inhibitor"],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "battery#bat2", "tray", "custom/notification"],
+    "modules-right": ["pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "hyprland/language", "battery", "battery#bat2", "tray", "custom/notification"],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -180,6 +180,5 @@
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
         "escape": true
-    },
+    }
 }
-
