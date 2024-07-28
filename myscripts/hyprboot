@@ -1,0 +1,8 @@
+#!/bin/bash
+
+fcitx5 -d &
+nm-applet --indicator --sm-disabled &
+udiskie &
+dropbox &
+gammastep-indicator &
+nextcloud &
