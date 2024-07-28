@@ -10,15 +10,17 @@ set expandtab
 
 " Powerline
 if has('nvim')
+    " Powerline vim as of writing doesn't support nvim
+    " Therefore, using vim-airlines
     let g:airline_powerline_fonts=1
 else
     python3 from powerline.vim import setup as powerline_setup
     python3 powerline_setup()
     python3 del powerline_setup
+    let g:powerline_pycmd="py3"
+    let g:Powerline_symbols='fancy'
 endif
 
-let g:powerline_pycmd="py3"
-let g:Powerline_symbols='fancy'
 set encoding=utf-8
 set laststatus=2
 
@@ -30,8 +32,12 @@ let g:molokai_original=1
 
 " Mouse support
 set mouse=a
+" Autostart GitSign
+let g:gitsign#auto_enable=1
+let g:gitsign#highlight#enable_lines = 0 "Git diff lines highlights are kinda obnoxious...
+let g:gitsign#highlight#enable_marks = 1
 
-" Misc options
+"Misc options
 set splitright
 set splitbelow
 set cursorline

@@ -29,7 +29,13 @@ call plug#begin()
 
     " Syntax highlighting for different programming languages
     Plug 'elzr/vim-json'
- 
+
+    " Git integration
+    Plug 'vim-denops/denops.vim'
+    Plug 'tennashi/gitsign.vim'
+    
+    Plug 'tpope/vim-fugitive'
+
     " Colorschemes
     Plug 'sickill/vim-monokai'
     Plug 'tomasr/molokai'
