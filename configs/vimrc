@@ -40,6 +40,7 @@ set splitright
 set splitbelow
 set cursorline
 set number
+set termguicolors
 
 " Set vim swap directory
 set directory^=$HOME/.vim/swap//

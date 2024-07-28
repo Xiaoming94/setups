@@ -16,6 +16,8 @@ call plug#begin()
         call LoadNvimPlugs()
     else
         Plug 'preservim/nerdtree'
+        " Color previewer
+        Plug 'BourgeoisBear/clrzr'
     endif
 
     " i3 syntax highlighting

@@ -6,6 +6,8 @@ vim.cmd("source ~/.vimrc")
 
 -- import plugin configurations
 require("init_nvim_tree")
+require("setup_ccc")
+require("colorizer_init")
 
 -- set g options
 vim.g.airline_powerline_fonts=1
@@ -16,4 +18,4 @@ vim.keymap.set("n", "<C-g>",
         vim.cmd("NvimTreeToggle")
     end)
 
-vim.cmd("colorscheme dracula")
+vim.cmd("colorscheme flow")
