@@ -1,5 +1,7 @@
 -- Source vanilla vimrc
 local vim = vim
+local o = vim.opt
+
 vim.cmd("source ~/.vimrc")
 
 -- import plugin configurations
@@ -13,3 +15,5 @@ vim.keymap.set("n", "<C-g>",
     function()
         vim.cmd("NvimTreeToggle")
     end)
+
+vim.cmd("colorscheme dracula")

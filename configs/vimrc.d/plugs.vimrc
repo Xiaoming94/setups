@@ -39,6 +39,7 @@ call plug#begin()
     " Colorschemes
     Plug 'sickill/vim-monokai'
     Plug 'tomasr/molokai'
+    Plug 'dracula/vim'
     call  LoadEnvPlugs()
 
 call plug#end()
