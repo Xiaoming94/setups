@@ -5,7 +5,6 @@ vim.cmd("source ~/.vimrc")
 
 -- import plugin configurations
 require("init_nvim_tree")
-require("setup_ccc")
 require("colorizer_init")
 
 -- set tabs

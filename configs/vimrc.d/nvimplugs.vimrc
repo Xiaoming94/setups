@@ -13,4 +13,3 @@ Plug '0xstepit/flow.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 
 " Colorpicker
-Plug 'uga-rosa/ccc.nvim'
