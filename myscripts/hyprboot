@@ -5,4 +5,5 @@ nm-applet --indicator --sm-disabled &
 udiskie &
 dropbox &
 gammastep-indicator &
+sleep 10
 nextcloud &
