@@ -24,6 +24,10 @@
     //         "default": ""
     //     }
     // },
+    "hyprland/workspaces" : {
+        "format": "{name}",
+    },
+
     "keyboard-state": {
         "capslock": true,
         "format": "{name} {icon}",
