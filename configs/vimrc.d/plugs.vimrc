@@ -5,13 +5,18 @@ function! LoadEnvPlugs()
     endif
 endfunction
 
+function! LoadNvimPlugs()
+    source ~/.vimrc.d/nvimplugs.vimrc
+endfunction
+
 call plug#begin()
     " NERDTree
-    Plug 'preservim/nerdtree'
 
-    " Vim Airlines
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    if has('nvim')
+        call LoadNvimPlugs()
+    else
+        Plug 'preservim/nerdtree'
+    endif
 
     " i3 syntax highlighting
     Plug 'PotatoesMaster/i3-vim-syntax'
@@ -31,4 +36,5 @@ call plug#begin()
     call  LoadEnvPlugs()
 
 call plug#end()
+
 
