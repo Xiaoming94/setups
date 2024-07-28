@@ -9,10 +9,13 @@ set softtabstop=4
 set expandtab
 
 " Powerline
-
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
+if has('nvim')
+    let g:airline_powerline_fonts=1
+else
+    python3 from powerline.vim import setup as powerline_setup
+    python3 powerline_setup()
+    python3 del powerline_setup
+endif
 
 let g:powerline_pycmd="py3"
 let g:Powerline_symbols='fancy'

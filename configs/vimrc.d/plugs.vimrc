@@ -9,12 +9,19 @@ call plug#begin()
     " NERDTree
     Plug 'preservim/nerdtree'
 
+    " Vim Airlines
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+
     " i3 syntax highlighting
     Plug 'PotatoesMaster/i3-vim-syntax'
 
     " autoclose
     Plug 'jiangmiao/auto-pairs'
-    
+
+    " hyprland syntax
+    Plug 'theRealCarneiro/hyprland-vim-syntax'
+
     " Syntax highlighting for different programming languages
     Plug 'elzr/vim-json'
  
