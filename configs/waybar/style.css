@@ -169,7 +169,7 @@ window#waybar.solo {
   min-width: 16px;
 }
 #keyboard-state > label {
-  background-color: #1d3f53;
+  background-color: transparent;
 }
 #keyboard-state > label.locked {
   color: #FFFF00;
