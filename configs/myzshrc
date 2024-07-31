@@ -9,28 +9,19 @@
 # Aliases, Defining aliases
 
 alias xmonadconfig='vim ~/.xmonad/xmonad.hs'
-alias aurget='wget -P /home/xiaoming/Downloads/AUR/'
 alias ls='ls --color=auto -h --group-directories-first'
 alias awesomecfg='vim ~/.config/awesome/rc.lua'
 alias fancydesktop='startx ~/.xinitrc compiz'
 alias grep='grep --color=auto --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn'
-alias våldta='sudo !!'
 alias screenshot='scrot ~/Pictures/%Y-%m-%d-%T-screenshot.png'
 alias i3config='vim ~/.config/i3/config'
 alias swayconfig='vim ~/.config/sway/config'
 alias initrbenv='eval "$(rbenv init -)"'
 alias matlab='~/bin/myscripts/matlab -nosplash -nodesktop'
 alias matlabgui='~/bin/myscripts/matlab'
-alias sysupg='pacaur -Syu --noedit --noconfirm'
 alias setupmirror='wl-mirror DP-1 &'
 
-# Define vim aliases
-if [ -f ~/.EverVim.vimrc ]; then
-    alias vimd='vim -c "NERDTreeToggle"'
-fi
-
 # Shell specific environmental variables
-PATH=$PATH:~/bin:/home/xiaoming/bin/myscripts
 PE_DIR=/home/xiaoming/Documents/ProgrammingExercises/
 GTEST_COLOR=yes
 
