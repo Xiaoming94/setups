@@ -1,5 +1,8 @@
 # Setting up ls colors
-eval "$(dircolors -b)"
+if [ -z ${LS_COLORS+x} ];
+    # If OMZ is installed, then it will export LS_COLORS
+    then eval "$(dircolors -b)";
+fi
 
 # Ranger (Can these be in it's own file?)
 export RANGER_LOAD_DEFAULT_RC=FALSE
