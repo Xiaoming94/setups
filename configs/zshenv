@@ -1,8 +1,11 @@
+# Setting up ls colors
+eval "$(dircolors -b)"
+
 # Ranger (Can these be in it's own file?)
 export RANGER_LOAD_DEFAULT_RC=FALSE
 
 # Big ENV Variables per shell, (TODO: Move path to zshrc?)
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR=$VISUAL
 
 #  
@@ -11,7 +14,7 @@ export PATH=$PATH:/home/xiaoming/bin/myscripts
 export PE_DIR=/home/xiaoming/Documents/ProgrammingExercises/
 
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
-export QT_QPA_PLATFORMTHEME=gtk2
+# export QT_QPA_PLATFORMTHEME=gtk2 #This line should be uncommented and set to something else
 
 #export GTK_IM_MODULE=fcitx
 #export QT_IM_MODULE=fcitx
