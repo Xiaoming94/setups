@@ -12,9 +12,12 @@ done
 ANTIDOTE_DIR=$ZDOTDIR/antidote
 if [ -d "$ANTIDOTE_DIR" ]; then
     source $ANTIDOTE_DIR/antidote.zsh
-    antidote load
+    antidote load $ZDOTDIR/zsh_plugins.txt
 fi
 
+# Setoptions
+
+setopt autocd nomatch notify
 # Load the prompt based on $PROMPT_THEME
 
 PROMPT_THEME=${PROMPT_THEME:-ming}

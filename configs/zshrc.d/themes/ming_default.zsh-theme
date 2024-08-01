@@ -10,6 +10,4 @@ zstyle ':vcs_info:*' formats       \
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
 precmd () { vcs_info }
 
-setopt PROMPT_SUBST
-
 PS1='[%B%n%F{10}@%F{9}%m%f%b](%B%F{4}%2~%f%b) ${vcs_info_msg_0_}%f\$ '

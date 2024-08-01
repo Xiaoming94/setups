@@ -1,12 +1,8 @@
 ZDOTDIR=$HOME/.zshrc.d
 
+PROMPT_THEME=ming
 # Source standard configurations
 source $ZDOTDIR/init.zsh
 
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-setopt autocd extendedglob nomatch notify
+# Vim bindings in zsh
 bindkey -v
-# End of lines configured by zsh-newuser-install
