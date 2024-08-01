@@ -14,7 +14,7 @@ vimrc_file=$HOME/.vimrc
 if [[ -f "$vimrc_file" ]]; then
     echo "vimrc exists"
 else
-    sh $REPO_ROOT/setupvim.sh
+    source $REPO_ROOT/myscripts/setupvim.sh
 fi
 
 echo "===== Setting up neovim ====="
