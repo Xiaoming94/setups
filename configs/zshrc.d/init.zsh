@@ -17,7 +17,7 @@ fi
 
 # Setoptions
 
-setopt autocd nomatch notify
+setopt autocd globcomplete nomatch notify
 # Load the prompt based on $PROMPT_THEME
 
 PROMPT_THEME=${PROMPT_THEME:-ming}
