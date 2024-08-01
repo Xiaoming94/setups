@@ -1,0 +1,3 @@
+# Default prompt configuration Including with VCS info
+
+'builtin' 'source' "$THEMES_DIR/ming_default.zsh-theme"

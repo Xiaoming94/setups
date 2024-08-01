@@ -12,4 +12,4 @@ precmd () { vcs_info }
 
 setopt PROMPT_SUBST
 
-PROMPT='[%B%n%F{10}@%F{9}%m%f%b](%B%F{4}%2~%f%b) ${vcs_info_msg_0_}%f\$ '
+PS1='[%B%n%F{10}@%F{9}%m%f%b](%B%F{4}%2~%f%b) ${vcs_info_msg_0_}%f\$ '

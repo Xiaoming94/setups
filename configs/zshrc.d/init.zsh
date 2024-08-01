@@ -16,7 +16,13 @@ if [ -d "$ANTIDOTE_DIR" ]; then
 fi
 
 # Load the prompt based on $PROMPT_THEME
-PROMPT_THEME=${PROMPT_THEME:-default}
+
+PROMPT_THEME=${PROMPT_THEME:-ming}
 THEMES_DIR=$ZDOTDIR/themes
 
-source "$THEMES_DIR/$PROMPT_THEME.zsh"
+fpath=($THEMES_DIR $fpath)
+autoload -Uz promptinit
+promptinit
+setopt PROMPT_SUBST
+
+prompt "$PROMPT_THEME"
