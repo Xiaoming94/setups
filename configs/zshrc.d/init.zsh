@@ -14,3 +14,9 @@ if [ -d "$ANTIDOTE_DIR" ]; then
     source $ANTIDOTE_DIR/antidote.zsh
     antidote load
 fi
+
+# Load the prompt based on $PROMPT_THEME
+PROMPT_THEME=${PROMPT_THEME:-default}
+THEMES_DIR=$ZDOTDIR/themes
+
+source "$THEMES_DIR/$PROMPT_THEME.zsh"
