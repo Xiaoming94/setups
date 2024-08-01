@@ -1,9 +1,3 @@
-# Setting up ls colors
-if [ -z ${LS_COLORS+x} ];
-    # If OMZ is installed, then it will export LS_COLORS
-    then eval "$(dircolors -b)";
-fi
-
 # Ranger (Can these be in it's own file?)
 export RANGER_LOAD_DEFAULT_RC=FALSE
 
@@ -15,9 +9,6 @@ export EDITOR=$VISUAL
 export PATH=$PATH:~/bin
 export PATH=$PATH:/home/xiaoming/bin/myscripts
 export PE_DIR=/home/xiaoming/Documents/ProgrammingExercises/
-
-export QT_AUTO_SCREEN_SCALE_FACTOR=0
-# export QT_QPA_PLATFORMTHEME=gtk2 #This line should be uncommented and set to something else
 
 #export GTK_IM_MODULE=fcitx
 #export QT_IM_MODULE=fcitx
