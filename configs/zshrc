@@ -1,8 +1,19 @@
 ZDOTDIR=$HOME/.zshrc.d
 
-PROMPT_THEME=ming
+PROMPT_THEME=powerlevel10k
+ 
 # Source standard configurations
-source $ZDOTDIR/init.zsh
+source $M_CONFDIR/init.zsh
+
+# Powerlevel10k stuff
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.d/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+[[ ! -f ~/.zshrc.d/.p10k.zsh ]] || source ~/.zshrc.d/.p10k.zsh
 
 # Vim bindings in zsh
 bindkey -v

@@ -1,0 +1,5 @@
+# zsh-users stuff
+zsh-users/zsh-syntax-highlighting
+
+# Themes
+romkatv/powerlevel10k kind:fpath
