@@ -27,7 +27,7 @@ function setupOmz () {
 function setupmyzsh () {
     echo "===== Creating symbolic links ====="
     ln -s $CONFIG_DIR/zshrc.d $HOME/.zshrc.d
-    if [ ! -z ${SETUP_ANTIDOTE+x} ]; then 
+    if [ -n ${SETUP_ANTIDOTE+x} ]; then 
         echo "===== Setting up antidote ====="
         git clone --depth=1 https://github.com/mattmc3/antidote.git $HOME/.zshrc.d/antidote
     fi

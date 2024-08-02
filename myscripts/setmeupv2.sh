@@ -61,7 +61,10 @@ mkdir -p $HOME/bin/myscripts
 ln -s $CONFIG_DIR/fastfetch $HOME/.config/fastfetch
 
 source $SCRIPTS_DIR/setupneovim.sh
-source $SCRIPTS_DIR/setupdesktop.sh
+
+if [[ -n ${DESKTOP+x} ]]; then
+    source $SCRIPTS_DIR/setupdesktop.sh
+fi
 source $SCRIPTS_DIR/setupmyzsh.sh
 
 echo "All set, basic setup is done"
