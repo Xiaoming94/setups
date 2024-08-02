@@ -9,7 +9,7 @@ CONFIG_DIR=$REPO_ROOT/configs
 SCRIPTS_DIR=$REPO_ROOT/myscripts
 
 USER_CONFIG=$HOME/.config
-SCRIPTS_PATH=$HOME/bin/myscripts
+MY_SCRIPTS_PATH=$HOME/bin/myscripts
 
 function setupkitty () {
     echo "===== Setting up Kitty ====="
@@ -36,15 +36,15 @@ function setupwaybar () {
 function setuphyprland () {
     sudo pacman -S --needed hyprland hypridle hyprpaper swaylock
     ln -s $CONFIG_DIR/hyprland $USER_CONFIG/hyprland
-    ln -s $SCRIPTS_DIR/hyprboot $SCRIPTS_PATH
-    ln -s $SCRIPTS_DIR/swayslock $SCRIPTS_PATH
+    ln -s $SCRIPTS_DIR/hyprboot $MY_SCRIPTS_PATH
+    ln -s $SCRIPTS_DIR/swayslock $MY_SCRIPTS_PATH
 }
 
 function setupsway () {
     sudo pacman -S --needed sway swaylock swaybg swayidle
     ln -s $CONFIG_DIR/sway $USER_CONFIG/sway
-    ln -s $SCRIPTS_DIR/swaystartup $SCRIPTS_PATH
-    ln -s $SCRIPTS_DIR/swayslock $SCRIPTS_PATH
+    ln -s $SCRIPTS_DIR/swaystartup $MY_SCRIPTS_PATH
+    ln -s $SCRIPTS_DIR/swayslock $MY_SCRIPTS_PATH
 }
 
 function installnetworkmanager () {
