@@ -1,0 +1,8 @@
+uninstall_my_zsh_setup () {
+    # backup .zshrc
+    mv $HOME/.zshrc $HOME/.zshrc.bak 
+    # remove the symlinks
+    rm $HOME/.zshenv \
+       $HOME/.zprofile \
+       $HOME/.zshrc.d 
+}
