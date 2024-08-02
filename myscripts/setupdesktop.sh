@@ -43,8 +43,8 @@ function setuphyprland () {
 function setupsway () {
     sudo pacman -S --needed sway swaylock swaybg swayidle
     ln -s $CONFIG_DIR/sway $USER_CONFIG/sway
-    ln -s $SCRIPTS_DIR/swaystartup $SCRIPT_PATH
-    ln -s $SCRIPTS_DIR/swayslock $SCRIPT_PATH
+    ln -s $SCRIPTS_DIR/swaystartup $SCRIPTS_PATH
+    ln -s $SCRIPTS_DIR/swayslock $SCRIPTS_PATH
 }
 
 function installnetworkmanager () {
