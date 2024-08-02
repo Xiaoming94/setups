@@ -53,12 +53,18 @@ function installnetworkmanager () {
     sudo systemctl enable NetworkManager --now
 }
 
+function setupaudio () {
+    echo "Setting up Pipewire"
+    sudo pacman -S --needed pipewire pavucontrol pipewire-pulse alsa-utils
+}
+
 DESKTOP=${DESKTOP:-hyprland}
 
 setupxresources
 setupkitty
 installfonts
-
+setupaudio 
+installnetworkmanager
 
 echo "Installing desktop $DESKTOP"
 
