@@ -1,7 +1,7 @@
 # $ ls variations
 
-alias ls='ls -F --color=auto'
-alias ll='ls -F -al --color=auto'
+alias ls='ls -F --color=auto --group-directories-first'
+alias ll='ls -F -al --color=auto --group-directories-first'
 
 alias grep='grep --color=auto --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn'
 
