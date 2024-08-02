@@ -8,7 +8,6 @@
 REPO_ROOT=$(git rev-parse --show-toplevel)
 CONFIG_DIR=$REPO_ROOT/configs
 
-cd $HOME
 vimrc_file=$HOME/.vimrc
 
 if [[ -f "$vimrc_file" ]]; then
