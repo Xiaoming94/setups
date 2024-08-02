@@ -3,7 +3,7 @@ ZDOTDIR=$HOME/.zshrc.d
 PROMPT_THEME=powerlevel10k
  
 # Source standard configurations
-source $M_CONFDIR/init.zsh
+source $ZDOTDIR/init.zsh
 
 # Powerlevel10k stuff
 
