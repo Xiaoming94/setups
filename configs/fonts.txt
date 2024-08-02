@@ -6,11 +6,10 @@ lib32-sdl2_ttf
 lib32-sdl_ttf 
 libfontenc 
 libxfont2 
-nerd-fonts-complete 
 noto-fonts 
 noto-fonts-cjk 
 noto-fonts-emoji 
-powerline-fonts-git 
+powerline-fonts 
 sdl2_ttf
 sdl_ttf
 ttf-arphic-ukai 
@@ -22,7 +21,7 @@ ttf-inconsolata
 ttf-joypixels
 ttf-liberation
 ttf-linux-libertine
-ttf-meslo-nerd-font-powerlevel10k
+ttf-firacode-nerd
 xorg-font-util
 xorg-fonts-encodings
 xorg-mkfontscale
