@@ -25,12 +25,15 @@ function setupAur () {
     git clone https://aur.archlinux.org/yay.git
     cd yay
     makepkg --syncdeps
-    makepkg --install
     makepkg --clean
     cd $HOME
     rm -rf $YAY_DIR_TEMP
     AUR_SET="set"
 }
+
+REPO_ROOT=$(git rev-parse --show-toplevel)
+CONFIG_DIR=$REPO_ROOT/configs
+SCRIPTS_DIR=$REPO_ROOT/myscripts
 
 installPackages
 
@@ -49,10 +52,7 @@ fi
 echo "packages installed"
 
 # Setting up vim, neovim, and zsh
-REPO_ROOT=$(git rev-parse --show-toplevel)
-CONFIG_DIR=$REPO_ROOT/configs
-SCRIPTS_DIR=$REPO_ROOT/myscripts
-cd $HOME
+cd $SCRIPTS_DIR
 
 mkdir -p $HOME/.config
 mkdir -p $HOME/bin/myscripts

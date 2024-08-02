@@ -8,8 +8,6 @@
 REPO_ROOT=$(git rev-parse --show-toplevel)
 CONFIG_DIR=$REPO_ROOT/configs
 
-cd $HOME
-
 echo "===== Setting up vim ====="
 
 # Setting up vim with vim-plugs

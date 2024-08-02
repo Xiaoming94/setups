@@ -35,8 +35,6 @@ function setupmyzsh () {
     cp $CONFIG_DIR/default.zshrc $HOME/.zshrc
 }
 
-cd $HOME
-
 ln -s $CONFIG_DIR/zshenv $HOME/.zshenv
 ln -s $CONFIG_DIR/zprofile $HOME/.zprofile
 
