@@ -5,6 +5,9 @@ alias ll='ls -F -al --color=auto --group-directories-first'
 
 alias grep='grep --color=auto --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn'
 
+# Standard for this setup
+alias cdsetuprepo="cd $SETUP_REPO" 
+
 # Arch Linux aliases
 alias pacupg='sudo pacman -Syu'
 alias pacin='sudo pacman -S'

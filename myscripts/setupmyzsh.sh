@@ -17,8 +17,8 @@ function setupOmz () {
     
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     
-    echo "SETUP_REPO=$REPO_ROOT" >> .zshrc       # Remember the config repo directory
-    echo "source ~/.myzshrc" >> .zshrc          # Sourcing personal config file
+    echo "SETUP_REPO=$REPO_ROOT" | tee -a $HOME/.zshrc       # Remember the config repo directory
+    echo "source ~/.myzshrc" | tee -a $HOME/.zshrc          # Sourcing personal config file
     
     echo "ZSH and oh-my-zsh is setup and running, setup themes and plugins yourself"
     echo "Any config should be done through .myzshrc" 
@@ -33,6 +33,7 @@ function setupmyzsh () {
     fi
     echo "===== Copying default zshrc into '$HOME' ===== "
     cp $CONFIG_DIR/default.zshrc $HOME/.zshrc
+    echo "SETUP_REPO=$REPO_ROOT" | tee -a $HOME/.zshrc       # Remember the config repo directory
 }
 
 ln -s $CONFIG_DIR/zshenv $HOME/.zshenv
