@@ -1,0 +1,14 @@
+ZDOTDIR=$HOME/.zshrc.d
+ 
+PROMPT_THEME=powerlevel10k
+# Source standard configurations
+source $ZDOTDIR/init.zsh
+
+if [[ $PROMPT_THEME == "powerlevel10k" ]]; then
+    loadp10k
+fi
+
+# Vim bindings in zsh
+bindkey -v
+
+fastfetch
