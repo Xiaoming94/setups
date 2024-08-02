@@ -8,6 +8,13 @@ for file in $ZDOTDIR/autoload/* ; do
     source $file;
 done
 
+# Autoloading functions in $ZDOTDIR/functions compiling them
+fpath+=$ZDOTDIR/functions
+
+for file in $ZDOTDIR/functions/* ; do
+    autoload -Uz $file
+done
+
 # Load antidote plugin manager if it exists
 ANTIDOTE_DIR=$ZDOTDIR/antidote
 if [ -d "$ANTIDOTE_DIR" ]; then
@@ -23,7 +30,7 @@ setopt autocd globcomplete nomatch notify
 PROMPT_THEME=${PROMPT_THEME:-ming}
 THEMES_DIR=$ZDOTDIR/themes
 
-fpath=($THEMES_DIR $fpath)
+fpath+=$THEMES_DIR
 autoload -Uz promptinit
 promptinit
 setopt PROMPT_SUBST
