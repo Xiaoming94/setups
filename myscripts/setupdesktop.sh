@@ -83,8 +83,8 @@ case $DESKTOP in
     plasma)
         sudo pacman -S --needed plasma-meta plasma-wayland-session kde-applications-meta
         ;;
-    i3)
-        setupi3
+    xfce | xfce4)
+        sudo pacman -S --needed xfce4 xfce4-goodies networkmanager network-manager-applet xss-lock 
         ;;
 
 esac

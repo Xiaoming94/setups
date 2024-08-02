@@ -2,9 +2,45 @@
 
 # Author: Xiaoming94
 # Set up script for archlinux
-# Installs basic console environment with zsh and vim+neovim along with 
 
-# Then proceeds to setup a desktop
+#########################
+### ABOUT THIS SCRIPT ###
+#########################
+
+####
+# This is a script I wrote to setup a basic archlinux user workspace
+# This script is meant to replace the old setmeup.sh script
+# Which was created during old times.
+# The main difference being that now setting up zsh, vim, neovim and desktop
+# were broken up into their own shell scripts.
+####
+
+##############################
+### HOW TO USE THIS SCRIPT ###
+##############################
+
+####
+# Honestly, just execute it and it will take care of the rest.
+# Out of the box, this will just setup a zsh environment with default configurations,
+# and setup both vim and neovim
+# You can control this script through the variable
+# - DESKTOP: selects a desktop to install
+#   - If Unset, no desktop is installed (this is default)
+#   - Otherwise, install the mentioned Desktop
+#       - Supported values values: sway, hyprland, gnome, kde, xfce(4)
+# 
+# - OMZ: Set this if you want OMZ (Unset by default)
+# - SETUP_ANTIDOTE: Set up zsh antidote (Unset by default)
+#
+# All of these variables are meant to be used by the other 3 scripts that are sourced:
+# - setupneovim.sh Sets up my neovim (and vim) configuration
+# - setupdesktop.sh Installs the desktop based on $DESKTOP.
+#   - Read the script to see how $DESKTOP is being used
+# - setupmyzsh.sh Sets up a minimalistic zsh environment
+#   - If OMZ is set, will install Oh-My-Zsh instead
+#   - If SETUP_ANTIDOTE is set, will install Antidote plugin-manager
+####
+
 
 # Install base pkgs
 echo "===== SETTING UP USER SPACE FOR $USER ON $MY_OS ====="
