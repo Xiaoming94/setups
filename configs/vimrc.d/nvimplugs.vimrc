@@ -13,3 +13,6 @@ Plug '0xstepit/flow.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 
 " Colorpicker
+
+" Markdown previewer
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
