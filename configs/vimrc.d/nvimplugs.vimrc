@@ -1,3 +1,10 @@
+" Session manager
+Plug 'rmagatti/auto-session'
+
+" Telescope
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-lua/plenary.nvim'
+
 " Programming tools
 Plug 'neovim/nvim-lspconfig' " LSP integration for QOL
 

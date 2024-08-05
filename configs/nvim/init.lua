@@ -6,7 +6,11 @@ vim.cmd("source ~/.vimrc")
 -- import plugin configurations
 require("init_nvim_tree")
 require("colorizer_init")
+require("auto_session_init")
+
+-- LSP stuff 
 require("lsp/clangd_conf")
+
 
 -- set tabs
 vim.o.tabstop = 4
