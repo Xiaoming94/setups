@@ -45,7 +45,7 @@ set $gnomeSchema org.gnome.desktop.interface
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/.config/sway/wallpaper.png fill
+output * bg ~/.local/share/wallpapers/wallpaper_sway.png fill
 #
 # Example configuration:
 #
@@ -164,7 +164,7 @@ client.unfocused        $background $background     $foreground $blue1      $bac
 
     # Start your launcher
     bindsym $mod+p exec $menu
-    bindsym $mod+d exec wofi --show drun
+    bindsym $mod+d exec wofi -I --show drun
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
