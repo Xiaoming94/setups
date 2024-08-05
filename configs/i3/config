@@ -294,7 +294,6 @@ exec --no-startup-id ~/bin/myscripts/i3startup
 exec --no-startup-id dunst
 exec --no-startup-id redshift-gtk
 exec --no-startup-id xss-lock -- slock 
-exec_always feh --bg-fill -0-0 ~/.config/i3/Wallpaper.png 
 
 
 smart_borders on
