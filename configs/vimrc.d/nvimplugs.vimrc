@@ -1,3 +1,6 @@
+" Programming tools
+Plug 'neovim/nvim-lspconfig' " LSP integration for QOL
+
 " Vim Airlines
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
