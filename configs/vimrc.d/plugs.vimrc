@@ -18,6 +18,11 @@ call plug#begin()
         Plug 'preservim/nerdtree'
         " Color previewer
         Plug 'BourgeoisBear/clrzr'
+
+        " Load YCM if there is python3
+        if has('python3')
+            Plug 'ycm-core/YouCompleteMe'
+        endif
     endif
 
     " i3 syntax highlighting
@@ -33,11 +38,10 @@ call plug#begin()
     Plug 'elzr/vim-json'
 
     " Git integration
-    Plug 'vim-denops/denops.vim'
-    Plug 'tennashi/gitsign.vim'
+    Plug 'mhinz/vim-signify'         " Showing edits and diffs
+    Plug 'tpope/vim-fugitive'        " Git command integrations
+    Plug 'rhysd/conflict-marker.vim' " Visualising Merge conflicts
     
-    Plug 'tpope/vim-fugitive'
-
     " Colorschemes
     Plug 'sickill/vim-monokai'
     Plug 'tomasr/molokai'
