@@ -10,6 +10,7 @@ require("auto_session_init")
 
 -- LSP stuff 
 require("lsp/clangd_conf")
+require("lsp/rust_analyzer_conf")
 
 
 -- set tabs
