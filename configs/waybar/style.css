@@ -120,11 +120,11 @@ window#waybar.solo {
   color: #23a2f1;
 }
 #pulseaudio.muted {
-  color: #2a5c45;
+  color: #15947f;
 }
 
 #custom-media {
-  color: #2a5c45;
+  color: #15947f;
   min-width: 100px;
 }
 #custom-notification {
@@ -153,11 +153,11 @@ window#waybar.solo {
 }
 
 #idle_inhibitor.activated {
-  color: #2d3436;
+  color: #15947f;
 }
 
 #mpd {
-  color: #2a5c45;
+  color: #15947f;
 }
 #language {
   color: #a54382;

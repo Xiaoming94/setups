@@ -3,6 +3,7 @@ $barbg-color: #02142477;
 $widget-bg-color: #081b25d0;
 $main-font-color: #ffffff;
 $font-color-2:#23a2f1;
+$active-accent: #15947f;
 
 * {
   /* `otf-font-awesome` is required to be installed for icons */
@@ -58,11 +59,11 @@ window#waybar.solo {
   }
 
   &.focused {
-    background-color: #15947f;
+    background-color: $active-accent;
   }
 
   &.active {
-    background-color: #15947f;
+    background-color: $active-accent;
   }
 
   &.urgent {
@@ -153,12 +154,12 @@ label:focus {}
   color: $font-color-2;
 
   &.muted {
-    color: #2a5c45;
+    color: $active-accent;
   }
 }
 
 #custom-media {
-  color: #2a5c45;
+  color: $active-accent;
   min-width: 100px;
 
   &.custom-spotify, &.custom-vlc {}
@@ -198,11 +199,11 @@ label:focus {}
 }
 
 #idle_inhibitor.activated {
-  color: #2d3436;
+  color: $active-accent;
 }
 
 #mpd {
-  color: #2a5c45;
+  color: $active-accent;
 
   &.disconnected, &.stopped, &.paused {}
 }
