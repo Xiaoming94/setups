@@ -111,40 +111,7 @@ default_floating_border normal 1
 
 # Colors
 
-set $foreground #d0eeec  
-set $background #162c2e
-
-# Black
-set $black1     #1b1d1e
-set $black2     #505354
-                      
-# Red                 
-set $red1       #f92672
-set $red2       #ff5995
-                      
-# Green               
-set $green1     #82b414
-set $green2     #b6e354
-                      
-# Yellow              
-set $yellow1    #fd971f
-set $yellow2    #feed6c
-                      
-# Blue                
-set $blue1      #4e82aa
-set $blue2      #0c73c2
-                      
-# Magenta             
-set $magenta1   #8c54fe
-set $magenta2   #9e6ffe
-                      
-# Cyan                
-set $cyan1      #465457
-set $cyan2      #899ca1
-                      
-# White               
-set $white1     #ccccc6
-set $white2     #f8f8f2
+include colorschemes/ming_1.conf
 
 
 # ClientProps Colors
