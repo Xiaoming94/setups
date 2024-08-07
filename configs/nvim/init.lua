@@ -7,6 +7,7 @@ vim.cmd("source ~/.vimrc")
 require("init_nvim_tree")
 require("colorizer_init")
 require("auto_session_init")
+require("minimap_init")
 
 -- LSP stuff 
 require("lsp/clangd_conf")
@@ -26,6 +27,11 @@ vim.g.airline_powerline_fonts=1
 vim.keymap.set("n", "<C-g>",
     function()
         vim.cmd("NvimTreeToggle")
+    end)
+
+vim.keymap.set("n", "<C-m>",
+    function()
+        vim.cmd("MinimapToggle")
     end)
 
 vim.cmd("colorscheme flow")

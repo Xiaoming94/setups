@@ -26,3 +26,6 @@ Plug 'norcalli/nvim-colorizer.lua'
 
 " Markdown previewer
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
+" Minimap
+Plug 'wfxr/minimap.vim', {'do': '!cargo install --locked code-minimap'}
