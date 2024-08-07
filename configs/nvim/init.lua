@@ -24,15 +24,6 @@ vim.o.expandtab = true
 vim.g.airline_powerline_fonts=1
 
 -- Keybinds
-vim.keymap.set("n", "<C-g>",
-    function()
-        vim.cmd("NvimTreeToggle")
-    end)
-
-vim.keymap.set("n", "<C-m>",
-    function()
-        vim.cmd("MinimapToggle")
-    end)
 
 vim.cmd("colorscheme flow")
  

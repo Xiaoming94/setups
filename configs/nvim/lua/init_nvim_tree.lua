@@ -21,3 +21,9 @@ require("nvim-tree").setup({
     dotfiles = true,
   },
 })
+
+-- Keybinds for nvimTree
+vim.keymap.set("n", "<C-g>",
+    function()
+        vim.cmd("NvimTreeToggle")
+    end)
