@@ -8,6 +8,7 @@ require("init_nvim_tree")
 require("colorizer_init")
 require("auto_session_init")
 require("minimap_init")
+require("telescope_keys")
 
 -- LSP stuff 
 require("lsp/clangd_conf")
