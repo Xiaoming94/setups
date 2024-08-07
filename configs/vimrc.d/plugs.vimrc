@@ -41,7 +41,10 @@ call plug#begin()
     Plug 'mhinz/vim-signify'         " Showing edits and diffs
     Plug 'tpope/vim-fugitive'        " Git command integrations
     Plug 'rhysd/conflict-marker.vim' " Visualising Merge conflicts
-    
+
+    " Surround visual marked words
+    Plug 'tpope/vim-surround'
+
     " Colorschemes
     Plug 'sickill/vim-monokai'
     Plug 'tomasr/molokai'
