@@ -8,5 +8,6 @@ if [[ ! $(pgrep -u $UID -x fcitx5) ]]; then
     gammastep-indicator &
     sleep 20
     nextcloud &
+    swaync &
 fi
 
