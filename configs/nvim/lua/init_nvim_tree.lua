@@ -8,6 +8,8 @@ vim.opt.termguicolors = true
 
 local function my_on_attach(bufnr)
     local api = require("nvim-tree.api")
+    
+    api.config.mappings.default_on_attach(bufnr)
 
     local function opts(desc)
         return {
@@ -18,8 +20,6 @@ local function my_on_attach(bufnr)
             nowait
         }
     end
-
-    api.config.mappings.default_on_attach()
     
     vim.keymap.set('n', '<C-t>', api.tree.change_root_to_parent, opts('Up'))
     vim.keymap.set('n', '?',     api.tree.toggle_help,           opts('help'))
