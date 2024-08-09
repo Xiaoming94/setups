@@ -12,7 +12,7 @@ local function preview_location_callback(_, method, result)
     end
 end
 
-function peek_definition()
+local peek_definition()
     local params = lsp.util.make_position_params()
     return lsp.buf_request(0, 'textDocument/definition', params, preview_location_callback)
 end
