@@ -1,7 +1,6 @@
 # Setting up ls colors
-if [ -z ${LS_COLORS+x} ];
-    then eval "$(dircolors -b)";
-fi
+
+eval "$(dircolors -b)";
 
 export LESS="-FR"  # Options passed to less
 
