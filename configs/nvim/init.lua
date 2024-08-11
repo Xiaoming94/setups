@@ -13,6 +13,7 @@ require("telescope_keys")
 -- LSP stuff 
 require("lsp/clangd_conf")
 require("lsp/rust_analyzer_conf")
+require("lsp/lua_lsp_conf")
 
 
 -- set tabs
