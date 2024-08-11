@@ -15,3 +15,5 @@ compinit
 # End of lines added by compinstall
 
 zmodload -i zsh/complist
+
+setopt correct
