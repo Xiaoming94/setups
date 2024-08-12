@@ -11,6 +11,7 @@ require("minimap_init")
 require("telescope_keys")
 
 -- LSP stuff 
+require("lsp/common_functions")
 require("lsp/clangd_conf")
 require("lsp/rust_analyzer_conf")
 require("lsp/lua_lsp_conf")
@@ -28,4 +29,4 @@ vim.g.airline_powerline_fonts=1
 -- Keybinds
 
 vim.cmd("colorscheme flow")
- 
+

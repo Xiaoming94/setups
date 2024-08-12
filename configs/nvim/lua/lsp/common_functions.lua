@@ -12,7 +12,23 @@ local function preview_location_callback(_, method, result)
     end
 end
 
-local peek_definition()
-    local params = lsp.util.make_position_params()
-    return lsp.buf_request(0, 'textDocument/definition', params, preview_location_callback)
-end
+vim.api.nvim_create_autocmd("LspAttach",{
+    callback = function(args)
+        local bufnr = args.buf
+        local client = lsp.get_client_by_id(args.data.client_id)
+        if client.supports_method("textDocument/completion") then
+            vim.bo[bufnr].omnifunc = "v:lia.vim.lsp.omnifunc"
+        end
+        if client.supports_method("textDocument/definition") then
+            vim.bo[bufnr].tagfunc = "v:lua.vim.lsp.tagfunc"
+        end
+    end
+})
+
+vim.api.nvim_create_autocmd("LspDetach", {
+    callback = function(args)
+        local client = lsp.get_client_by_id(args.data.client_id)
+        -- PlaceHolders??
+        vim.cmd("setlocal tagfunc< omnifunc<")
+    end
+})
