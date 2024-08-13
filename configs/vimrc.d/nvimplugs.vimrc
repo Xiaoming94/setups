@@ -4,9 +4,17 @@ Plug 'rmagatti/auto-session'
 " Telescope
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope-live-grep-args.nvim'
 
 " Programming tools
 Plug 'neovim/nvim-lspconfig' " LSP integration for QOL
+
+" Completion
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
 
 " Vim Airlines
 Plug 'vim-airline/vim-airline'
