@@ -1,3 +1,5 @@
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 require("lspconfig").clangd.setup{
     cmd = {
         "clangd",
@@ -12,4 +14,6 @@ require("lspconfig").clangd.setup{
         "--clang-tidy",
         "--enable-config"
     },
+
+    capabilities = capabilities
 }
