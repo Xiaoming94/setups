@@ -29,5 +29,6 @@ vim.g.airline_powerline_fonts=1
 
 -- Keybinds
 
-vim.cmd("colorscheme cyberdream")
+-- colorscheme
+require("colorscheme_helper").set_colorscheme("cyberdream")
 
