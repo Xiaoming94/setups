@@ -39,3 +39,6 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 
 " Minimap
 Plug 'wfxr/minimap.vim'
+
+" Colorschemes 
+Plug 'scottmckendry/cyberdream.nvim'
