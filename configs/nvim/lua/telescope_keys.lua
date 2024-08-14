@@ -1,3 +1,20 @@
+-- Setup Telescope
+local telescope = require("telescope")
+
+local telescope_actions = require("telescope.actions")
+
+telescope.setup({
+    defaults = {
+        mappings = {
+            i = {
+                ["<C-s>"] = telescope_actions.select_vertical,
+            },
+        },
+    },
+})
+
+telescope.load_extension("live_grep_args")
+
 -- Keybinds for Telescope
 
 local builtin = require("telescope.builtin")
