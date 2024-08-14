@@ -42,12 +42,12 @@ window#waybar.solo {
   }
 }
 
+$boxshadow-color: #000000;
 #workspaces button {
   padding: 0px 10px 0px 4px;
   color: #ffffff;
 
   /* Use box-shadow instead of border so the text isn't offset */
-  box-shadow: inset 0 -3px transparent;
 
   /* Avoid rounded borders under each workspace name */
   border-radius: 7px;
@@ -56,14 +56,17 @@ window#waybar.solo {
 
   &:hover {
     background-color: #163d5d;
+    box-shadow: 0px 2px 2px $boxshadow-color;
   }
 
   &.focused {
     background-color: $active-accent;
+    box-shadow: 0px 2px 2px $boxshadow-color;
   }
 
   &.active {
     background-color: $active-accent;
+    box-shadow: 0px 2px 2px $boxshadow-color;
   }
 
   &.urgent {
