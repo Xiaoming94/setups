@@ -1,16 +1,6 @@
 local lsp = vim.lsp
 
-local function preview_location_callback(_, method, result)
-    if result == nil or vim.tbl_isempty(result) then
-        lsp.log.info(method, 'No location found')
-        return nil
-    end
-    if vim.tbl_islist(result) then
-        lsp.util.preview_location(result[1])
-    else
-        lsp.util.preview_location(result)
-    end
-end
+-- Code snippet stolen from neovim documentation
 
 vim.api.nvim_create_autocmd("LspAttach",{
     callback = function(args)
