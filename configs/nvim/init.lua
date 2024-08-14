@@ -30,5 +30,5 @@ vim.g.airline_powerline_fonts=1
 -- Keybinds
 
 -- colorscheme
-require("colorscheme_helper").set_colorscheme("cyberdream")
+require("colorscheme_helper").set_colorscheme("synthweave")
 

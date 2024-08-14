@@ -42,3 +42,4 @@ Plug 'wfxr/minimap.vim'
 
 " Colorschemes 
 Plug 'scottmckendry/cyberdream.nvim'
+Plug 'samharju/synthweave.nvim'
