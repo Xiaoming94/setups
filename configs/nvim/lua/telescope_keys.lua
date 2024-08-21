@@ -8,6 +8,7 @@ telescope.setup({
         mappings = {
             i = {
                 ["<C-s>"] = telescope_actions.select_vertical,
+                ["<C-x>"] = telescope_actions.select_horizontal,
             },
         },
     },
@@ -23,3 +24,6 @@ vim.keymap.set('n', 'Tf', builtin.find_files, {})
 vim.keymap.set('n', 'Tg', builtin.live_grep, {})
 vim.keymap.set('n', 'Tb', builtin.buffers, {})
 vim.keymap.set('n', 'Th', builtin.help_tags, {})
+vim.keymap.set('n', 'Tli', builtin.lsp_implementations, {})
+vim.keymap.set('n', 'Tld', builtin.lsp_definitions, {})
+vim.keymap.set('n', 'Tlr', builtin.lsp_references, {})
