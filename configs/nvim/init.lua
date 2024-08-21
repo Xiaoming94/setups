@@ -16,6 +16,7 @@ require("lsp/common_functions")
 require("lsp/clangd_conf")
 require("lsp/rust_analyzer_conf")
 require("lsp/lua_lsp_conf")
+require("lsp/pyright_conf")
 
 
 -- set tabs
