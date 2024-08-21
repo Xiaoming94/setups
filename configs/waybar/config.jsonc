@@ -5,7 +5,7 @@
     // "width": 1280, // Waybar width
     "spacing": 0, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/window", "hyprland/workspaces", "hyprland/window", "custom/media"],
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/window", "hyprland/workspaces", "hyprland/submap", "hyprland/window", "custom/media"],
     "modules-center": ["clock", "idle_inhibitor"],
     "modules-right": ["pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "hyprland/language", "battery", "battery#bat2", "tray", "custom/notification"],
     // Modules configuration
@@ -26,6 +26,10 @@
     // },
     "hyprland/workspaces" : {
         "format": "{name}",
+    },
+
+    "hyprland/submap" : {
+        "format" : "{}",
     },
 
     "keyboard-state": {

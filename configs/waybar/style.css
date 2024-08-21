@@ -59,7 +59,7 @@ window#waybar.solo {
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-#mode {
+#mode, #submap {
   background-color: rgba(131, 22, 82, 0.548);
   border-radius: 10px;
   border: solid 2px transparent;
