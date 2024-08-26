@@ -10,6 +10,8 @@ require("auto_session_init")
 require("minimap_init")
 require("telescope_keys")
 require("nvim_cmp_init")
+require("markdown_render_init")
+require("gitsigns_init")
 
 -- LSP stuff 
 require("lsp/common_functions")

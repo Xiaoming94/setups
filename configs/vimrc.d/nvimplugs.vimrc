@@ -1,6 +1,9 @@
 " Session manager
 Plug 'rmagatti/auto-session'
 
+" Tree-sitter?
+Plug 'nvim-treesitter/nvim-treesitter'
+
 " Telescope
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -35,10 +38,14 @@ Plug 'norcalli/nvim-colorizer.lua'
 " Colorpicker
 
 " Markdown previewer
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'MeanderingProgrammer/render-markdown.nvim'
+
+" Git integration enhanced
+Plug 'lewis6991/gitsigns.nvim'
 
 " Minimap
-Plug 'wfxr/minimap.vim'
+Plug 'isrothy/neominimap.nvim'
+Plug 'dstein64/nvim-scrollview'
 
 " Colorschemes 
 Plug 'scottmckendry/cyberdream.nvim'
