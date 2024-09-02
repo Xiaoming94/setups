@@ -12,6 +12,7 @@ require("telescope_keys")
 require("nvim_cmp_init")
 require("markdown_render_init")
 require("gitsigns_init")
+require("treesitter_init")
 
 -- LSP stuff 
 require("lsp/common_functions")
