@@ -28,8 +28,12 @@ vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
 
--- set g options
+-- More config options
 vim.g.airline_powerline_fonts=1
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+    pattern = { "*" },
+    command = [[%s/\s\+$//e]],
+})
 
 -- Keybinds
 
