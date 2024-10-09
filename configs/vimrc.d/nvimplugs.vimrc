@@ -42,11 +42,12 @@ Plug 'MeanderingProgrammer/render-markdown.nvim'
 
 " Git integration enhanced
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'tveskag/nvim-blame-line'
 
 " Minimap
 Plug 'isrothy/neominimap.nvim'
 Plug 'dstein64/nvim-scrollview'
 
-" Colorschemes 
+" Colorschemes
 Plug 'scottmckendry/cyberdream.nvim'
 Plug 'samharju/synthweave.nvim'

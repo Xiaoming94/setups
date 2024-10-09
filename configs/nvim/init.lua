@@ -13,8 +13,9 @@ require("nvim_cmp_init")
 require("markdown_render_init")
 require("gitsigns_init")
 require("treesitter_init")
+require("blame_lines")
 
--- LSP stuff 
+-- LSP stuff
 require("lsp/common_functions")
 require("lsp/clangd_conf")
 require("lsp/rust_analyzer_conf")
