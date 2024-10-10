@@ -12,6 +12,16 @@ telescope.setup({
             },
         },
     },
+    extensions = {
+        live_grep_args = {
+            auto_quoting = false,
+            -- keybinds
+            mappings = {
+                i = {
+                },
+            },
+        },
+    },
 })
 
 telescope.load_extension("live_grep_args")
@@ -21,7 +31,8 @@ telescope.load_extension("live_grep_args")
 local builtin = require("telescope.builtin")
 
 vim.keymap.set('n', 'Tf', builtin.find_files, {})
-vim.keymap.set('n', 'Tg', builtin.live_grep, {})
+vim.keymap.set('n', 'Tgn', builtin.live_grep, {})
+vim.keymap.set("n", 'Tga', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", {})
 vim.keymap.set('n', 'Tb', builtin.buffers, {})
 vim.keymap.set('n', 'Th', builtin.help_tags, {})
 vim.keymap.set('n', 'Tli', builtin.lsp_implementations, {})
