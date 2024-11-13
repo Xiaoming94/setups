@@ -15,6 +15,15 @@ vim.api.nvim_create_autocmd("LspAttach",{
         vim.keymap.set('n', '<C-p>', function()
             vim.lsp.buf.hover()
         end)
+        if client.supports_method('textDocument/formatting') then
+        -- Format the current buffer on save
+            vim.api.nvim_create_autocmd('BufWritePre', {
+                buffer = args.buf,
+                callback = function()
+                    vim.lsp.buf.format({bufnr = args.buf, id = client.id})
+                end,
+            })
+        end
     end
 })
 

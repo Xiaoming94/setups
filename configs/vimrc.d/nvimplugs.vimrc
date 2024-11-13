@@ -11,6 +11,8 @@ Plug 'nvim-telescope/telescope-live-grep-args.nvim'
 
 " Programming tools
 Plug 'neovim/nvim-lspconfig' " LSP integration for QOL
+Plug 'mfussenegger/nvim-lint' " Linter
+Plug 'stevearc/conform.nvim' " Code Formatter
 
 " Completion
 Plug 'hrsh7th/cmp-nvim-lsp'

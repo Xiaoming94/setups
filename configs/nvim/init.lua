@@ -21,6 +21,8 @@ require("lsp/clangd_conf")
 require("lsp/rust_analyzer_conf")
 require("lsp/lua_lsp_conf")
 require("lsp/pyright_conf")
+require("lsp/formatter")
+require("lsp/lint_conf")
 
 
 -- set tabs
@@ -30,7 +32,7 @@ vim.o.shiftwidth = 4
 vim.o.expandtab = true
 
 -- More config options
-vim.g.airline_powerline_fonts=1
+vim.g.airline_powerline_fonts = 1
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     pattern = { "*" },
     command = [[%s/\s\+$//e]],
@@ -42,4 +44,3 @@ vim.opt.wrap = true;
 
 -- colorscheme
 require("colorscheme_helper").set_colorscheme("synthweave")
-
