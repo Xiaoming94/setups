@@ -53,3 +53,4 @@ Plug 'dstein64/nvim-scrollview'
 " Colorschemes
 Plug 'scottmckendry/cyberdream.nvim'
 Plug 'samharju/synthweave.nvim'
+Plug 'eldritch-theme/eldritch.nvim'
