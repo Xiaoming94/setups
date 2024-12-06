@@ -23,6 +23,7 @@ require("lsp/lua_lsp_conf")
 require("lsp/pyright_conf")
 require("lsp/formatter")
 require("lsp/lint_conf")
+require("lsp/kotlin")
 
 
 -- set tabs

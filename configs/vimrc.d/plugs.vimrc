@@ -34,6 +34,9 @@ call plug#begin()
     " hyprland syntax
     Plug 'theRealCarneiro/hyprland-vim-syntax'
 
+    " Filetypes
+    Plug 'udalov/kotlin-vim'
+
     " Syntax highlighting for different programming languages
     Plug 'elzr/vim-json'
 
