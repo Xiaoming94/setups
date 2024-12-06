@@ -24,6 +24,7 @@ require("lsp/pyright_conf")
 require("lsp/formatter")
 require("lsp/lint_conf")
 require("lsp/kotlin")
+require("lsp/ruby_rubocop")
 
 
 -- set tabs
