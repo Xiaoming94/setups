@@ -36,6 +36,7 @@ call plug#begin()
 
     " Filetypes
     Plug 'udalov/kotlin-vim'
+    Plug 'elixir-editors/vim-elixir'
 
     " Syntax highlighting for different programming languages
     Plug 'elzr/vim-json'
