@@ -8,6 +8,17 @@ export EDITOR=$VISUAL
 path+=("$HOME"'/bin')
 path+=("$HOME"'/bin/myscripts')
 
+2>/dev/null 1>&2 which ruby
+if [ $? -eq 0 ]; then
+    export GEM_HOME="$(gem env user_gemhome)"
+    path+=("$GEM_HOME/bin")
+fi
+
+2>/dev/null 1>&2 sh -c "which cargo && which rustc"
+if [ $? -eq 0 ]; then
+    path+=("$HOME"'/.cargo/bin')
+fi
+
 export PATH
 export PE_DIR=/home/xiaoming/Documents/ProgrammingExercises/
 

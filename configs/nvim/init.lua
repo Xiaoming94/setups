@@ -26,7 +26,6 @@ require("lsp/lint_conf")
 require("lsp/kotlin")
 require("lsp/ruby_rubocop")
 
-
 -- set tabs
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
