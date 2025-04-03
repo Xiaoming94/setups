@@ -14,20 +14,20 @@ SCRIPTS_DIR=$REPO_ROOT/myscripts
 function setupOmz () {
     ln -s $CONFIG_DIR/myzshrc $HOME/.myzshrc
     echo "===== installing oh-my-zsh ====="
-    
+
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    
+
     echo "SETUP_REPO=$REPO_ROOT" | tee -a $HOME/.zshrc       # Remember the config repo directory
     echo "source ~/.myzshrc" | tee -a $HOME/.zshrc          # Sourcing personal config file
-    
+
     echo "ZSH and oh-my-zsh is setup and running, setup themes and plugins yourself"
-    echo "Any config should be done through .myzshrc" 
+    echo "Any config should be done through .myzshrc"
 }
 
 function setupmyzsh () {
     echo "===== Creating symbolic links ====="
     ln -s $CONFIG_DIR/zshrc.d $HOME/.zshrc.d
-    if [ -n ${SETUP_ANTIDOTE+x} ]; then 
+    if [[ -n ${SETUP_ANTIDOTE+x} ]]; then
         echo "===== Setting up antidote ====="
         git clone --depth=1 https://github.com/mattmc3/antidote.git $HOME/.zshrc.d/antidote
     fi
