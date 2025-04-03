@@ -14,7 +14,7 @@ MY_SCRIPTS_PATH=$HOME/bin/myscripts
 function setupkitty () {
     echo "===== Setting up Kitty ====="
     sudo pacman -S --needed kitty
-    ln -s $CONFIG_DIR/kitty $USER_CONFIG/kitty  
+    ln -s $CONFIG_DIR/kitty $USER_CONFIG/kitty
 }
 
 function setupxresources () {
@@ -34,7 +34,7 @@ function setupwaybar () {
 }
 
 function setuphyprland () {
-    sudo pacman -S --needed hyprland hypridle hyprpaper swaylock
+    sudo pacman -S --needed hyprland hypridle hyprpaper hyprlock hyprpolkitagent
     ln -s $CONFIG_DIR/hyprland $USER_CONFIG/hyprland
     ln -s $SCRIPTS_DIR/hyprboot $MY_SCRIPTS_PATH
     ln -s $SCRIPTS_DIR/swayslock $MY_SCRIPTS_PATH
@@ -63,12 +63,12 @@ DESKTOP=${DESKTOP:-hyprland}
 setupxresources
 setupkitty
 installfonts
-setupaudio 
+setupaudio
 installnetworkmanager
 
 echo "Installing desktop $DESKTOP"
 
-case $DESKTOP in 
+case $DESKTOP in
     sway)
         setupsway
         setupwaybar
@@ -78,13 +78,13 @@ case $DESKTOP in
         setupwaybar
         ;;
     gnome)
-        sudo pacman -S --needed gnome gnome-extra 
+        sudo pacman -S --needed gnome gnome-extra
         ;;
     plasma)
         sudo pacman -S --needed plasma-meta plasma-wayland-session kde-applications-meta
         ;;
     xfce | xfce4)
-        sudo pacman -S --needed xfce4 xfce4-goodies networkmanager network-manager-applet xss-lock 
+        sudo pacman -S --needed xfce4 xfce4-goodies networkmanager network-manager-applet xss-lock
         ;;
 
 esac
