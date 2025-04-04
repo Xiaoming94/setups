@@ -28,7 +28,7 @@
 #   - If Unset, no desktop is installed (this is default)
 #   - Otherwise, install the mentioned Desktop
 #       - Supported values values: sway, hyprland, gnome, kde, xfce(4)
-# 
+#
 # - OMZ: Set this if you want OMZ (Unset by default)
 # - SETUP_ANTIDOTE: Set up zsh antidote (Unset by default)
 #
@@ -45,7 +45,7 @@
 # Install base pkgs
 echo "===== SETTING UP USER SPACE FOR $USER ON $MY_OS ====="
 
-BASE_PKGLIST="zsh neovim vim python feh imagemagick fastfetch"
+BASE_PKGLIST="zsh neovim vim python feh imagemagick fastfetch less man-db"
 
 function installPackages () {
     echo "Installing basic packages"

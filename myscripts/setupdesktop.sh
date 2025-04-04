@@ -35,9 +35,8 @@ function setupwaybar () {
 
 function setuphyprland () {
     sudo pacman -S --needed hyprland hypridle hyprpaper hyprlock hyprpolkitagent
-    ln -s $CONFIG_DIR/hyprland $USER_CONFIG/hyprland
+    ln -s $CONFIG_DIR/hypr $USER_CONFIG/hypr
     ln -s $SCRIPTS_DIR/hyprboot $MY_SCRIPTS_PATH
-    ln -s $SCRIPTS_DIR/swayslock $MY_SCRIPTS_PATH
 }
 
 function setupsway () {
