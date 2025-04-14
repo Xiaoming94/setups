@@ -5,5 +5,6 @@ vim.g.neominimap = {
         minimap_width = 20,
         fix_width = true,
         direction = "right",
+        close_if_last_window = true,
     }
 }
