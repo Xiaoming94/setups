@@ -258,8 +258,8 @@ client.unfocused        $background $background     $foreground $blue1      $bac
     bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
     bindsym XF86AudioRaiseVolume exec sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%"
     bindsym XF86AudioLowerVolume exec sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%"
-    bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -fps 60 -dec 5
-    bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -fps 60 -inc 5
+    bindsym XF86MonBrightnessDown exec --no-startup-id sh -c "brightnessctl set 5%-"
+    bindsym XF86MonBrightnessUp   exec --no-startup-id sh -c "brightnessctl set +5%"
 
 #
 # Resizing containers:
