@@ -88,13 +88,14 @@
             "weeks-pos": "left",
             "format": {
                 "today": "<b><u>{}</u></b>",
-                "weeks": "<b>W{}</b>" 
+                "weeks": "<b>W{}</b>"
             }
         }
     },
     "cpu": {
         "format": "{usage}% ",
-        "tooltip": false
+        "tooltip": true,
+        "tooltip-format": "CPU Usage"
     },
     "memory": {
         "format": "{}% "
