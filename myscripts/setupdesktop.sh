@@ -11,10 +11,12 @@ SCRIPTS_DIR=$REPO_ROOT/myscripts
 USER_CONFIG=$HOME/.config
 MY_SCRIPTS_PATH=$HOME/bin/myscripts
 
-function setupkitty () {
-    echo "===== Setting up Kitty ====="
-    sudo pacman -S --needed kitty
-    ln -s $CONFIG_DIR/kitty $USER_CONFIG/kitty
+function setupterminal () {
+    TERM_APP=$1;
+    echo "===== Setting up $TERM_APP ====="
+
+    sudo pacman -S --needed $TERM_APP
+    ln -s $CONFIG_DIR/$TERM_APP $USER_CONFIG/$TERM_APP
 }
 
 function setupxresources () {
@@ -60,7 +62,7 @@ function setupaudio () {
 DESKTOP=${DESKTOP:-hyprland}
 
 setupxresources
-setupkitty
+setupterminal() wezterm
 installfonts
 setupaudio
 installnetworkmanager

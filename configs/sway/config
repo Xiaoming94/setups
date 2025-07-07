@@ -15,14 +15,14 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty
+set $term wezterm
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 
 set $rofi rofi -show
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu j4-dmenu-desktop --dmenu='bemenu -i --binding vim' --term='kitty'
+set $menu j4-dmenu-desktop --dmenu='bemenu -i --binding vim' --term='wezterm'
 set $cmdrunner bemenu-run
 # Default Web Browser
 set $web env MOZ_ENABLE_WAYLAND=1 firefox
