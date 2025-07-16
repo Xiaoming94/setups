@@ -179,6 +179,9 @@ label:focus {}
 
 #temperature.critical {}
 
+$tray-menu-bg: $barbg-color;
+$tray-menu-bg-hover: #272924;
+
 #tray {
   background: transparent;
   border-radius: 20px;
@@ -199,6 +202,17 @@ label:focus {}
       margin-left: 1px;
     }
   }
+  menu {
+    background: $tray-menu-bg;
+
+    menuitem {
+      padding: 3px 0px;
+    }
+    menuitem:hover {
+      background: $tray-menu-bg-hover;
+    }
+  }
+
 }
 
 #idle_inhibitor.activated {
