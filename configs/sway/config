@@ -133,7 +133,7 @@ client.unfocused        $background $background     $foreground $blue1      $bac
 
     # Start your launcher
     bindsym $mod+p exec $menu
-    bindsym $mod+d exec wofi -I --show drun
+    bindsym $mod+d exec $cmdrunner
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -351,6 +351,7 @@ exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 
 # libsecret with kwallet
 exec --no-startup-id /usr/lib/pam_kwallet_init
+exec --no-startup-id /usr/bin/kwalletd6
 
 include /etc/sway/config.d/*
 exec --no-startup-id ~/bin/myscripts/swaystartup
