@@ -14,7 +14,7 @@ if [ $? -eq 0 ]; then
     path+=("$GEM_HOME/bin")
 fi
 
-2>/dev/null 1>&2 sh -c "which cargo && which rustc"
+2>/dev/null 1>&2 sh -c "which cargo && which rustc || which rustup"
 if [ $? -eq 0 ]; then
     path+=("$HOME"'/.cargo/bin')
 fi
