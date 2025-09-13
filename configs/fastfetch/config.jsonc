@@ -18,6 +18,7 @@
     "separator",
     "os",
     "host",
+    "packages",
     "kernel",
     "uptime",
     "shell",
