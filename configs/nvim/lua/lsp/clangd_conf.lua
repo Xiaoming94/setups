@@ -1,6 +1,6 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-require("lspconfig").clangd.setup{
+vim.lsp.config('clangd', {
     cmd = {
         "clangd",
         "-j=4",
@@ -16,4 +16,6 @@ require("lspconfig").clangd.setup{
     },
 
     capabilities = capabilities
-}
+})
+
+vim.lsp.enable('clangd')

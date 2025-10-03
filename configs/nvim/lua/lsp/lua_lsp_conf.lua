@@ -1,3 +1,1 @@
-require('lspconfig').lua_ls.setup({
-
-})
+vim.lsp.enable('lua_ls')

@@ -1,10 +1,8 @@
 -- Code snippet stolen from https://rust-analyzer.github.io/manual.html#vimneovim
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-local lspconfig = require('lspconfig')
-
-lspconfig.rust_analyzer.setup({
---    on_attach = on_attach,
+vim.lsp.config('rust_analyzer', {
+    --    on_attach = on_attach,
     settings = {
         ["rust-analyzer"] = {
             imports = {
@@ -17,8 +15,8 @@ lspconfig.rust_analyzer.setup({
                 buildScripts = {
                     overrideCommand = {
                         "cargo",
-			            "check",
-			            "--message-format=json",
+                        "check",
+                        "--message-format=json",
                     }
                 },
                 features = {
@@ -35,3 +33,5 @@ lspconfig.rust_analyzer.setup({
     },
     capabilities = capabilities,
 })
+
+vim.lsp.enable('rust_analyzer')

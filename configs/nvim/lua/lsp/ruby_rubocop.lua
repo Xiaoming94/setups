@@ -1,3 +1,1 @@
-require("lspconfig").rubocop.setup({
-
-})
+vim.lsp.enable('rubocop')

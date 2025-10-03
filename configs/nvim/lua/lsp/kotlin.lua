@@ -1,3 +1,1 @@
-require("lspconfig").kotlin_language_server.setup({
-
-})
+vim.lsp.enable('kotlin_lsp')

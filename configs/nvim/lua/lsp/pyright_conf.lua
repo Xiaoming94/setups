@@ -1,3 +1,1 @@
-require('lspconfig').pyright.setup({
-
-})
+vim.lsp.enable('pyright')
