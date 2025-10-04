@@ -25,7 +25,7 @@ set $rofi rofi -show
 set $menu j4-dmenu-desktop --dmenu='bemenu -i --binding vim' --term='wezterm'
 set $cmdrunner bemenu-run
 # Default Web Browser
-set $web env MOZ_ENABLE_WAYLAND=1 firefox
+set $web chromium
 
 # Workspace names
 
