@@ -4,7 +4,7 @@ if [ -z ${ZDOTDIR+x} ]; then
 fi
 
 # Initializing my standard zsh environment
-for file in $ZDOTDIR/autoload/* ; do
+for file in $ZDOTDIR/autoload/*.zsh ; do
     source $file;
 done
 

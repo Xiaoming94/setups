@@ -1,0 +1,9 @@
+edit_config() {
+    snapshot_pwd=$(pwd)
+    application=$1
+    config_path=${$XDG_CONFIG_HOME:-$HOME/.config}
+
+    eval cd "$config_path/$application"
+    $EDITOR
+    eval cd $snapshot_pwd
+}

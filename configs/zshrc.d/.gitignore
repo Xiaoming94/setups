@@ -2,3 +2,5 @@
 antidote
 ./antidote/*
 zsh_plugins.zsh
+*.zwc
+init.zsh.zwc.old
