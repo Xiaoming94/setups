@@ -1,11 +1,11 @@
 compile_all() {
+    autoload -Uz zrecompile
     if [ ! -f $ZDOTDIR/init.zsh.zwc ]; then
         zcompile $ZDOTDIR/init.zsh
     else
         zrecompile $ZDOTDIR/init.zsh
     fi
 
-    autoload -Uz zrecompile
     autosource_dir=$ZDOTDIR/autoload/
     for file in $autosource_dir/*.zsh; do
         if [ ! -f $autosource_dir/$file.zwc ]; then
@@ -22,4 +22,4 @@ compile_all() {
     cd -
 }
 
-#vi: ft=zsh
+# vi: ft=zsh
