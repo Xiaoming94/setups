@@ -1,22 +1,22 @@
-#### Setting $ZDOTDIR ####
-ZDOTDIR=$HOME/.zshrc.d
- 
+#### Initializing Config ####
+#
+# Source standard configurations
+# init.zsh are the common stuff
+#
+#############################
+
+ZSH_CONFIG_DIR="$HOME/.zshrc.d"
+source "$ZSH_CONFIG_DIR/init.zsh"
+
+# Vim bindings in zsh
+bindkey -v
+
+#### Custom and local aliases here ####
+
 #### Set the theme ####
 #
 # Default theme is ming
 # To see available themes, run '$ prompt -l'
 
-#PROMPT_THEME=ming
-
-#### Initializing Config ####
-# Source standard configurations
-
-source $ZDOTDIR/init.zsh
-
-if [[ $PROMPT_THEME == "powerlevel10k" ]]; then
-    loadp10k
-fi
-
-# Vim bindings in zsh
-bindkey -v
-
+themename="ming"
+loadtheme "$themename"
