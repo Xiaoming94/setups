@@ -4,3 +4,5 @@ loadp10k() {
     fi
     [[ ! -f ~/.zshrc.d/.p10k.zsh ]] || source ~/.zshrc.d/.p10k.zsh
 }
+
+# vi: ft=zsh
