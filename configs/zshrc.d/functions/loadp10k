@@ -2,7 +2,12 @@ loadp10k() {
     if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
       source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
     fi
-    [[ ! -f ~/.zshrc.d/.p10k.zsh ]] || source ~/.zshrc.d/.p10k.zsh
+
+    p10k_filepath="${ZDOTDIR:-$HOME}/.p10k.zsh"
+
+    if [[ -f "$p10k_filepath" ]]; then
+        source "$p10k_filepath"
+    fi
 }
 
 # vi: ft=zsh

@@ -25,14 +25,4 @@ fi
 # Setoptions
 
 setopt autocd globcomplete nomatch notify
-# Load the prompt based on $PROMPT_THEME
 
-PROMPT_THEME=${PROMPT_THEME:-ming}
-THEMES_DIR=$ZSH_CONFIG_DIR/themes
-
-fpath+=$THEMES_DIR
-autoload -Uz promptinit
-promptinit
-setopt PROMPT_SUBST
-
-prompt "$PROMPT_THEME"

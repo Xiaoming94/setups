@@ -1,0 +1,22 @@
+loadtheme() {
+
+    themes_dir=$ZSH_CONFIG_DIR/themes
+    fpath+=$themes_dir
+
+    autoload -Uz promptinit
+    promptinit
+    setopt PROMPT_SUBST
+
+    prompt_theme=${1:-ming}
+
+    case $prompt_theme in
+        powerlevel10k | p10k)
+            prompt $prompt_theme && loadp10k
+            ;;
+        *)
+            prompt $prompt_theme
+            ;;
+    esac
+}
+
+# vi: ft=zsh
