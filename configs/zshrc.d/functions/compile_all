@@ -1,12 +1,12 @@
 compile_all() {
     autoload -Uz zrecompile
-    if [ ! -f $ZDOTDIR/init.zsh.zwc ]; then
-        zcompile $ZDOTDIR/init.zsh
+    if [ ! -f $ZSH_CONFIG_DIR/init.zsh.zwc ]; then
+        zcompile $ZSH_CONFIG_DIR/init.zsh
     else
-        zrecompile $ZDOTDIR/init.zsh
+        zrecompile $ZSH_CONFIG_DIR/init.zsh
     fi
 
-    autosource_dir=$ZDOTDIR/autoload/
+    autosource_dir=$ZSH_CONFIG_DIR/autoload/
     for file in $autosource_dir/*.zsh; do
         if [ ! -f $autosource_dir/$file.zwc ]; then
             zcompile $file
@@ -17,7 +17,7 @@ compile_all() {
 
     libfilename='mylib.zwc'
 
-    eval cd $ZDOTDIR/functions/
+    eval cd $ZSH_CONFIG_DIR/functions/
     zcompile $libfilename ./*
     cd -
 }
