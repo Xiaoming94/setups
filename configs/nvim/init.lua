@@ -25,6 +25,7 @@ require("lsp/formatter")
 require("lsp/lint_conf")
 require("lsp/kotlin")
 require("lsp/ruby_rubocop")
+require("lsp/javalsp_conf")
 
 -- set tabs
 vim.o.tabstop = 4

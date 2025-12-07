@@ -13,6 +13,7 @@ Plug 'nvim-telescope/telescope-live-grep-args.nvim'
 Plug 'neovim/nvim-lspconfig' " LSP integration for QOL
 Plug 'mfussenegger/nvim-lint' " Linter
 Plug 'stevearc/conform.nvim' " Code Formatter
+Plug 'mfussenegger/nvim-jdtls' "JAVA lsp
 
 " Completion
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -20,6 +21,7 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/cmp-omni'
 Plug 'hrsh7th/nvim-cmp'
 
