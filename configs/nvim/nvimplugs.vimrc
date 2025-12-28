@@ -2,7 +2,7 @@
 Plug 'rmagatti/auto-session'
 
 " Tree-sitter?
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'branch': 'master'}
 
 " Telescope
 Plug 'nvim-telescope/telescope.nvim'
