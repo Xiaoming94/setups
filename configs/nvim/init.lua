@@ -2,6 +2,18 @@
 local vim = vim
 
 vim.cmd("source ~/.vimrc")
+-- LSP stuff
+require("lsp/common_functions")
+require("lsp/clangd_conf")
+require("lsp/rust_analyzer_conf")
+require("lsp/lua_lsp_conf")
+require("lsp/pyright_conf")
+require("lsp/formatter")
+require("lsp/lint_conf")
+require("lsp/kotlin")
+require("lsp/ruby_rubocop")
+require("lsp/javalsp_conf")
+
 
 -- import plugin configurations
 require("init_nvim_tree")
@@ -14,18 +26,6 @@ require("markdown_render_init")
 require("gitsigns_init")
 require("treesitter_init")
 require("blame_lines")
-
--- LSP stuff
-require("lsp/common_functions")
-require("lsp/clangd_conf")
-require("lsp/rust_analyzer_conf")
-require("lsp/lua_lsp_conf")
-require("lsp/pyright_conf")
-require("lsp/formatter")
-require("lsp/lint_conf")
-require("lsp/kotlin")
-require("lsp/ruby_rubocop")
-require("lsp/javalsp_conf")
 
 -- set tabs
 vim.o.tabstop = 4
