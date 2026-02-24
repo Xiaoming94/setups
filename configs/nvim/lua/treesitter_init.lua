@@ -3,12 +3,12 @@ require('nvim-treesitter.configs').setup({
         "c",
         "cpp",
         "css",
-        "ruby",
         "rust",
         "python",
         "lua",
         "vim",
         "markdown",
+        "doxygen",
     },
 
     sync_install = false,
