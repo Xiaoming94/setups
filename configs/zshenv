@@ -7,6 +7,7 @@ export EDITOR=$VISUAL
 
 path+=("$HOME"'/bin')
 path+=("$HOME"'/bin/myscripts')
+path+=("$HOME"'/.local/bin')
 
 2>/dev/null 1>&2 which ruby
 if [ $? -eq 0 ]; then
