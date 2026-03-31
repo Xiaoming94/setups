@@ -1,1 +1,0 @@
-../nvim/nvimplugs.vimrc

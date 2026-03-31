@@ -32,8 +32,7 @@
 # - OMZ: Set this if you want OMZ (Unset by default)
 # - SETUP_ANTIDOTE: Set up zsh antidote (Unset by default)
 #
-# All of these variables are meant to be used by the other 3 scripts that are sourced:
-# - setupneovim.sh Sets up my neovim (and vim) configuration
+# All of these variables are meant to be used by the other scripts that are executed:
 # - setupdesktop.sh Installs the desktop based on $DESKTOP.
 #   - Read the script to see how $DESKTOP is being used
 # - setupmyzsh.sh Sets up a minimalistic zsh environment
@@ -71,6 +70,15 @@ REPO_ROOT=$(git rev-parse --show-toplevel)
 CONFIG_DIR=$REPO_ROOT/configs
 SCRIPTS_DIR=$REPO_ROOT/myscripts
 
+
+function setupNeovim() {
+    local vimrc_repo="$REPO_ROOT/../ming_vimrc"
+
+    local vimrc_github_repo="https://github.com/Xiaoming94/minv_vimrc.git"
+    git clone $vimrc_github_repo $vimrc_repo &&
+        bash $vimrc_repo/setupneovim.sh
+}
+
 installPackages
 
 if [ -z $INSTALLED  ]; then
@@ -96,7 +104,7 @@ mkdir -p $HOME/bin/myscripts
 # Setting up fastfetch config, cuz why not
 ln -s $CONFIG_DIR/fastfetch $HOME/.config/fastfetch
 
-source $SCRIPTS_DIR/setupneovim.sh
+setupNeovim
 
 if [[ -n ${DESKTOP+x} ]]; then
     source $SCRIPTS_DIR/setupdesktop.sh
