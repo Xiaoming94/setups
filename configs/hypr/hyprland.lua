@@ -47,7 +47,7 @@ hl.monitor({
 
 local terminal = "ghostty --working-directory=."
 
-local fileManager = "ghostty --working-directory=. -e ranger"
+local fileManager = terminal .. " -e ranger"
 
 --$menu = wofi --show drun -I
 
@@ -144,14 +144,15 @@ hl.config({
 	},
 })
 
--- https://wiki.hyprland.org/Configuring/Variables/#animations
-
+-- Animations
 hl.config({
 	animations = {
 		enabled = true,
 		-- Default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
 	},
 })
+
+hl.animation({ leaf = "windows", enabled = true, speed = 4, bezier = "default", style = "popin" })
 
 -- See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
 
@@ -235,19 +236,19 @@ local mainMod = "SUPER"
 
 -- Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
 
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "RETURN", hl.dsp.exec_cmd("ghostty --working-directory=."))
+hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "RETURN", hl.dsp.exec_cmd(terminal))
 
 hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "C", hl.dsp.window.close())
 
 hl.bind(mainMod .. " + " .. "M", hl.dsp.exit())
 
-hl.bind(mainMod .. " + " .. "E", hl.dsp.exec_cmd("ghostty --working-directory=. -e ranger"))
+hl.bind(mainMod .. " + " .. "E", hl.dsp.exec_cmd(fileManager))
 
 hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "space", hl.dsp.window.float())
 
 hl.bind(mainMod .. " + " .. "F", hl.dsp.window.fullscreen())
 
-hl.bind(mainMod .. " + " .. "P", hl.dsp.exec_cmd("j4-dmenu-desktop --dmenu='bemenu -i --binding vim' --term='ghostty'"))
+hl.bind(mainMod .. " + " .. "P", hl.dsp.exec_cmd(menu))
 
 hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "V", hl.dsp.window.pseudo())
 
@@ -257,7 +258,7 @@ hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "I", hl.dsp.layout("togglesplit"
 
 -- dwindle
 
-hl.bind(mainMod .. " + " .. "D", hl.dsp.exec_cmd("bemenu-run"))
+hl.bind(mainMod .. " + " .. "D", hl.dsp.exec_cmd(runmenu))
 
 -- Move focus with mainMod + arrow keys
 
