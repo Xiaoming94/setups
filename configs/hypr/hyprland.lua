@@ -279,28 +279,6 @@ hl.bind(mainMod .. " + " .. "K", hl.dsp.focus({ direction = "up" }))
 
 hl.bind(mainMod .. " + " .. "J", hl.dsp.focus({ direction = "down" }))
 
--- Switch workspaces with mainMod + [0-9]
-
-hl.bind(mainMod .. " + " .. 1, hl.dsp.focus({ workspace = 1 }))
-
-hl.bind(mainMod .. " + " .. 2, hl.dsp.focus({ workspace = 2 }))
-
-hl.bind(mainMod .. " + " .. 3, hl.dsp.focus({ workspace = 3 }))
-
-hl.bind(mainMod .. " + " .. 4, hl.dsp.focus({ workspace = 4 }))
-
-hl.bind(mainMod .. " + " .. 5, hl.dsp.focus({ workspace = 5 }))
-
-hl.bind(mainMod .. " + " .. 6, hl.dsp.focus({ workspace = 6 }))
-
-hl.bind(mainMod .. " + " .. 7, hl.dsp.focus({ workspace = 7 }))
-
-hl.bind(mainMod .. " + " .. 8, hl.dsp.focus({ workspace = 8 }))
-
-hl.bind(mainMod .. " + " .. 9, hl.dsp.focus({ workspace = 9 }))
-
-hl.bind(mainMod .. " + " .. 0, hl.dsp.focus({ workspace = 10 }))
-
 -- swap windows around with arrows
 
 hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "left", hl.dsp.window.swap({ direction = "left" }))
@@ -362,27 +340,13 @@ hl.define_submap("screenshot", function()
 	hl.bind("escape", hl.dsp.submap("reset"))
 end)
 
--- Move active window to a workspace with mainMod + SHIFT + [0-9]
-
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. 1, hl.dsp.window.move({ workspace = 1 }))
-
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. 2, hl.dsp.window.move({ workspace = 2 }))
-
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. 3, hl.dsp.window.move({ workspace = 3 }))
-
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. 4, hl.dsp.window.move({ workspace = 4 }))
-
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. 5, hl.dsp.window.move({ workspace = 5 }))
-
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. 6, hl.dsp.window.move({ workspace = 6 }))
-
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. 7, hl.dsp.window.move({ workspace = 7 }))
-
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. 8, hl.dsp.window.move({ workspace = 8 }))
-
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. 9, hl.dsp.window.move({ workspace = 9 }))
-
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. 0, hl.dsp.window.move({ workspace = 10 }))
+-- Changing workspace
+-- Also includes moving window to a certain workspace
+for i = 1, 10 do
+	local key = i % 10 -- making sure i = 10 maps backs to 0
+	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
+	hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. key, hl.dsp.window.move({ workspace = i }))
+end
 
 -- Move current workspace to monitor
 
