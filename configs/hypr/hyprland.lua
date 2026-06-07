@@ -494,5 +494,5 @@ end)
 
 -- Exec (run every reload)
 hl.on("config.reloaded", function()
-	hl.exec_cmd("sh -c if [ -z $(pidof hyprpaper) ]; then hyprpaper& sleep 2s; fi; ~/.config/hypr/setwallpaper.sh")
+	hl.exec_cmd([[sh -c "if [ -z $(pidof hyprpaper) ]; then hyprpaper& sleep 2s; fi; ~/.config/hypr/setwallpaper.sh"]])
 end)
