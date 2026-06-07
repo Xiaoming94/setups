@@ -304,24 +304,16 @@ hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "J", hl.dsp.window.swap({ direct
 hl.bind(mainMod .. " + " .. "R", hl.dsp.submap("resize"))
 
 hl.define_submap("resize", function()
-	-- Reize windows around with arrows
-	-- TODO: manual review (unknown dispatcher: resizeactive)
-	-- hl.bind(" + left", hl.dsp.resizeactive("-10 0"))
-	-- TODO: manual review (unknown dispatcher: resizeactive)
-	-- hl.bind(" + right", hl.dsp.resizeactive("10 0"))
-	-- TODO: manual review (unknown dispatcher: resizeactive)
-	-- hl.bind(" + up", hl.dsp.resizeactive("0 -10"))
-	-- TODO: manual review (unknown dispatcher: resizeactive)
-	-- hl.bind(" + down", hl.dsp.resizeactive("0 10"))
-	-- Resize windows around with vim keys
-	-- TODO: manual review (unknown dispatcher: resizeactive)
-	-- hl.bind(" + H", hl.dsp.resizeactive("-10 0"))
-	-- TODO: manual review (unknown dispatcher: resizeactive)
-	-- hl.bind(" + L", hl.dsp.resizeactive("10 0"))
-	-- TODO: manual review (unknown dispatcher: resizeactive)
-	-- hl.bind(" + K", hl.dsp.resizeactive("0 -10"))
-	-- TODO: manual review (unknown dispatcher: resizeactive)
-	-- hl.bind(" + J", hl.dsp.resizeactive("0 10"))
+	-- Resize windows with arrows (relative=true => resizeactive-style relative resize)
+	hl.bind("left", hl.dsp.window.resize({ x = -10, y = 0, relative = true }))
+	hl.bind("right", hl.dsp.window.resize({ x = 10, y = 0, relative = true }))
+	hl.bind("up", hl.dsp.window.resize({ x = 0, y = -10, relative = true }))
+	hl.bind("down", hl.dsp.window.resize({ x = 0, y = 10, relative = true }))
+	-- Resize windows with vim keys
+	hl.bind("H", hl.dsp.window.resize({ x = -10, y = 0, relative = true }))
+	hl.bind("L", hl.dsp.window.resize({ x = 10, y = 0, relative = true }))
+	hl.bind("K", hl.dsp.window.resize({ x = 0, y = -10, relative = true }))
+	hl.bind("J", hl.dsp.window.resize({ x = 0, y = 10, relative = true }))
 	hl.bind("escape", hl.dsp.submap("reset"))
 end)
 
@@ -351,7 +343,7 @@ end
 -- Move current workspace to monitor
 
 -- TODO: manual review (unknown dispatcher: movecurrentworkspacetomonitor)
--- hl.bind("$mainMod + SHIFT + N", hl.dsp.movecurrentworkspacetomonitor("+1"))
+hl.bind(mainMod .. " + " .. "SHIFT" .. "+" .. "N", hl.dsp.workspace.move({ monitor = "+1" }))
 
 -- Example special workspace (scratchpad)
 
