@@ -440,26 +440,6 @@ hl.window_rule({
 
 -- Workspace rules
 
-local ws1 = "1:"
-
-local ws2 = "2:"
-
-local ws3 = "3:"
-
-local ws4 = "4:"
-
-local ws5 = "5:"
-
-local ws6 = "6:"
-
-local ws7 = "7:"
-
-local ws8 = "8:"
-
-local ws9 = "9:"
-
-local ws10 = "10:"
-
 hl.workspace_rule({
 	workspace = 1,
 	default_name = "1:",
