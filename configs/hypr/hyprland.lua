@@ -304,17 +304,29 @@ hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "J", hl.dsp.window.swap({ direct
 
 hl.bind(mainMod .. " + " .. "R", hl.dsp.submap("resize"))
 
+local dirmap = {
+	left = { x = -10, y = 0 },
+	right = { x = 10, y = 0 },
+	up = { x = 0, y = -10 },
+	down = { x = 0, y = 10 },
+}
+
+local function resizeDir(key, dir)
+	local xData = dirmap[dir].x
+	local yData = dirmap[dir].y
+	hl.bind(key, hl.dsp.window.resize({ x = xData, y = yData, relative = true }), { repeating = true })
+end
+
 hl.define_submap("resize", function()
 	-- Resize windows with arrows (relative=true => resizeactive-style relative resize)
-	hl.bind("left", hl.dsp.window.resize({ x = -10, y = 0, relative = true }))
-	hl.bind("right", hl.dsp.window.resize({ x = 10, y = 0, relative = true }))
-	hl.bind("up", hl.dsp.window.resize({ x = 0, y = -10, relative = true }))
-	hl.bind("down", hl.dsp.window.resize({ x = 0, y = 10, relative = true }))
+	for _, key in ipairs({ "left", "right", "up", "down" }) do
+		resizeDir(key, key)
+	end
+
 	-- Resize windows with vim keys
-	hl.bind("H", hl.dsp.window.resize({ x = -10, y = 0, relative = true }))
-	hl.bind("L", hl.dsp.window.resize({ x = 10, y = 0, relative = true }))
-	hl.bind("K", hl.dsp.window.resize({ x = 0, y = -10, relative = true }))
-	hl.bind("J", hl.dsp.window.resize({ x = 0, y = 10, relative = true }))
+	for key, dir in pairs({ H = "left", L = "right", K = "up", J = "down" }) do
+		resizeDir(key, dir)
+	end
 	hl.bind("escape", hl.dsp.submap("reset"))
 end)
 
