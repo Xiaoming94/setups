@@ -317,6 +317,8 @@ local function resizeDir(key, dir)
 	hl.bind(key, hl.dsp.window.resize({ x = xData, y = yData, relative = true }), { repeating = true })
 end
 
+-- defining a submap for resizing windows using
+-- Using both vimkeys and arros
 hl.define_submap("resize", function()
 	-- Resize windows with arrows (relative=true => resizeactive-style relative resize)
 	for _, key in ipairs({ "left", "right", "up", "down" }) do
