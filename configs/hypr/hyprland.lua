@@ -495,7 +495,11 @@ hl.workspace_rule({
 	default_name = "10:",
 })
 
--- Set the wallpaper
+-- Set the wallpaper (starts hyprpaper first if it isn't already running).
+-- config.reloaded does not fire on the initial startup, so this must also
+-- run from hyprland.start to set the wallpaper at boot.
+local set_wallpaper =
+	[[sh -c "if [ -z $(pidof hyprpaper) ]; then hyprpaper & sleep 3s; fi; ~/.config/hypr/setwallpaper.sh"]]
 
 -- Autostart
 hl.on("hyprland.start", function()
@@ -503,11 +507,10 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("hypridle")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	hl.exec_cmd("~/bin/myscripts/hyprboot")
+	hl.exec_cmd(set_wallpaper)
 end)
 
--- Exec (run every reload)
+-- Exec (re-randomize the wallpaper on every reload)
 hl.on("config.reloaded", function()
-	hl.exec_cmd(
-		[[sh -c "if [ -z $(pidof hyprpaper) ]; then hyprpaper & sleep 2s; fi; ~/.config/hypr/setwallpaper.sh"]]
-	)
+	hl.exec_cmd(set_wallpaper)
 end)
