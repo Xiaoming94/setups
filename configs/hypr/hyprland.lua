@@ -36,31 +36,17 @@ hl.monitor({
 })
 
 --##################
-
 --## MY PROGRAMS ###
-
 --##################
 
 -- See https://wiki.hyprland.org/Configuring/Keywords/
 
--- Set programs that you use
-
-local terminal = "ghostty --working-directory=."
-
-local fileManager = terminal .. " -e ranger"
-
---$menu = wofi --show drun -I
-
-local menu = "j4-dmenu-desktop --dmenu='bemenu -i --binding vim' --term='ghostty'"
-
-local runmenu = "bemenu-run"
+local vars = require("vars")
 
 --$runmenu = wofi --show run
 
 --################
-
 --## AUTOSTART ###
-
 --################
 
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
@@ -78,9 +64,7 @@ local runmenu = "bemenu-run"
 -- Polkit
 
 --############################
-
 --## ENVIRONMENT VARIABLES ###
-
 --############################
 
 -- See https://wiki.hyprland.org/Configuring/Environment-variables/
@@ -90,9 +74,7 @@ hl.env("HYPRCURSOR_SIZE", 24)
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
 --####################
-
 --## LOOK AND FEEL ###
-
 --####################
 
 -- Refer to https://wiki.hyprland.org/Configuring/Variables/
@@ -181,9 +163,7 @@ hl.config({
 })
 
 --############
-
 --## INPUT ###
-
 --############
 
 -- https://wiki.hyprland.org/Configuring/Variables/#input
@@ -221,174 +201,11 @@ hl.device({
 })
 
 --###################
-
 --## KEYBINDINGSS ###
-
 --###################
-
+-- Here the keybinds are setup
 -- See https://wiki.hyprland.org/Configuring/Keywords/
-
-local mainMod = "SUPER"
-
--- Sets "Windows" key as main modifier
-
--- Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "RETURN", hl.dsp.exec_cmd(terminal))
-
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "C", hl.dsp.window.close())
-
-hl.bind(mainMod .. " + " .. "M", hl.dsp.exit())
-
-hl.bind(mainMod .. " + " .. "E", hl.dsp.exec_cmd(fileManager))
-
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "space", hl.dsp.window.float())
-
-hl.bind(mainMod .. " + " .. "F", hl.dsp.window.fullscreen())
-
-hl.bind(mainMod .. " + " .. "P", hl.dsp.exec_cmd(menu))
-
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "V", hl.dsp.window.pseudo())
-
--- dwindle
-
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "I", hl.dsp.layout("togglesplit"))
-
--- dwindle
-
-hl.bind(mainMod .. " + " .. "D", hl.dsp.exec_cmd(runmenu))
-
--- Move focus with mainMod + arrow keys
-
-hl.bind(mainMod .. " + " .. "left", hl.dsp.focus({ direction = "left" }))
-
-hl.bind(mainMod .. " + " .. "right", hl.dsp.focus({ direction = "right" }))
-
-hl.bind(mainMod .. " + " .. "up", hl.dsp.focus({ direction = "up" }))
-
-hl.bind(mainMod .. " + " .. "down", hl.dsp.focus({ direction = "down" }))
-
--- Move focus with mainMod + vim keys directions
-
-hl.bind(mainMod .. " + " .. "H", hl.dsp.focus({ direction = "left" }))
-
-hl.bind(mainMod .. " + " .. "L", hl.dsp.focus({ direction = "right" }))
-
-hl.bind(mainMod .. " + " .. "K", hl.dsp.focus({ direction = "up" }))
-
-hl.bind(mainMod .. " + " .. "J", hl.dsp.focus({ direction = "down" }))
-
--- swap windows around with arrows
-
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "left", hl.dsp.window.swap({ direction = "left" }))
-
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "right", hl.dsp.window.swap({ direction = "right" }))
-
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "up", hl.dsp.window.swap({ direction = "up" }))
-
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "down", hl.dsp.window.swap({ direction = "down" }))
-
--- swap windows around with vim keys
-
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "H", hl.dsp.window.swap({ direction = "left" }))
-
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "L", hl.dsp.window.swap({ direction = "right" }))
-
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "K", hl.dsp.window.swap({ direction = "up" }))
-
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "J", hl.dsp.window.swap({ direction = "down" }))
-
--- Resize Mode
-
-hl.bind(mainMod .. " + " .. "R", hl.dsp.submap("resize"))
-
-local dirmap = {
-	left = { x = -10, y = 0 },
-	right = { x = 10, y = 0 },
-	up = { x = 0, y = -10 },
-	down = { x = 0, y = 10 },
-}
-
-local function resizeDir(key, dir)
-	local xData = dirmap[dir].x
-	local yData = dirmap[dir].y
-	hl.bind(key, hl.dsp.window.resize({ x = xData, y = yData, relative = true }), { repeating = true })
-end
-
--- defining a submap for resizing windows using
--- Using both vimkeys and arros
-hl.define_submap("resize", function()
-	-- Resize windows with arrows (relative=true => resizeactive-style relative resize)
-	for _, key in ipairs({ "left", "right", "up", "down" }) do
-		resizeDir(key, key)
-	end
-
-	-- Resize windows with vim keys
-	for key, dir in pairs({ H = "left", L = "right", K = "up", J = "down" }) do
-		resizeDir(key, dir)
-	end
-	hl.bind("escape", hl.dsp.submap("reset"))
-end)
-
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "S", hl.dsp.submap("screenshot"))
-
-hl.define_submap("screenshot", function()
-	hl.bind(
-		"Print",
-		hl.dsp.exec_cmd("grim ~/Pictures/$(date +%Y-%m-%d-%T)-screenshot.png && notify-send -t 2000 'screenshot taken'")
-	)
-	hl.bind("Print", hl.dsp.submap("reset"))
-	hl.bind("CONTROL" .. " + " .. "c", hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy'))
-	hl.bind("CONTROL" .. " + " .. "c", hl.dsp.submap("reset"))
-	hl.bind("escape", hl.dsp.submap("reset"))
-end)
-
--- Changing workspace
--- Also includes moving window to a certain workspace
-for i = 1, 10 do
-	local key = i % 10 -- making sure i = 10 maps backs to 0
-	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
-	hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. key, hl.dsp.window.move({ workspace = i }))
-end
-
--- Move current workspace to monitor
-
--- TODO: manual review (unknown dispatcher: movecurrentworkspacetomonitor)
-hl.bind(mainMod .. " + " .. "SHIFT" .. "+" .. "N", hl.dsp.workspace.move({ monitor = "+1" }))
-
--- Example special workspace (scratchpad)
-
-hl.bind(mainMod .. " + " .. "S", hl.dsp.workspace.toggle_special("magic"))
-
-hl.bind(mainMod .. " + " .. "ALT" .. " + " .. "S", hl.dsp.window.move({ workspace = "special:magic" }))
-
--- Scroll through existing workspaces with mainMod + scroll
-
-hl.bind(mainMod .. " + " .. "mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-
-hl.bind(mainMod .. " + " .. "mouse_up", hl.dsp.focus({ workspace = "e-1" }))
-
--- Move/resize windows with mainMod + LMB/RMB and dragging
-
-hl.bind(mainMod .. " + " .. "mouse:272", hl.dsp.window.drag(), { mouse = true })
-
-hl.bind(mainMod .. " + " .. "mouse:273", hl.dsp.window.resize(), { mouse = true })
-
--- Volume and brightness control
-
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd("pactl set-sink-mute 0 toggle"))
-
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("sh -c pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%"))
-
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("sh -c pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%"))
-
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"))
-
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set +5%"))
-
--- MISC Keybinds
-
-hl.bind(mainMod .. " + " .. "CTRL" .. " + " .. "L", hl.dsp.exec_cmd("loginctl lock-session"))
+require("keybinds.standard")(vars)
 
 --#############################
 
