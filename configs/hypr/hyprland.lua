@@ -335,7 +335,7 @@ local function reload_hyprland()
 	local load_hyprpm = [[hyprpm reload -n]]
 
 	hl.exec_cmd(set_wallpaper)
-	hl.exec_cmd(loa_hyprpm)
+	hl.exec_cmd(load_hyprpm)
 end
 
 -- Autostart
