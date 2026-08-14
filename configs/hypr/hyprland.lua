@@ -335,12 +335,10 @@ hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "S", hl.dsp.submap("screenshot")
 hl.define_submap("screenshot", function()
 	hl.bind(
 		"Print",
-		hl.dsp.exec_cmd(
-			"sh -c grim ~/Pictures/$(date +\\\"%Y-%m-%d-%T\\\")-screenshot.png && notify-send -t 2 'screenshot taken'"
-		)
+		hl.dsp.exec_cmd("grim ~/Pictures/$(date +%Y-%m-%d-%T)-screenshot.png && notify-send -t 2000 'screenshot taken'")
 	)
 	hl.bind("Print", hl.dsp.submap("reset"))
-	hl.bind("CONTROL" .. " + " .. "c", hl.dsp.exec_cmd("grim -g $(slurp)-| wl-copy"))
+	hl.bind("CONTROL" .. " + " .. "c", hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy'))
 	hl.bind("CONTROL" .. " + " .. "c", hl.dsp.submap("reset"))
 	hl.bind("escape", hl.dsp.submap("reset"))
 end)
@@ -441,6 +439,21 @@ hl.window_rule({
 		class = "^(org\\.keepassxc\\.KeePassXC)$",
 	},
 	workspace = 6,
+})
+
+--##############################
+--# Game specific window rules #
+--##############################
+-- Genshin impact
+hl.window_rule({
+	name = "genshin-multi-monitor-lock",
+	match = {
+		class = "steam_proton",
+		title = "Genshin Impact",
+	},
+	allows_input = true,
+	immediate = true,
+	confine_pointer = true, -- <--- Hard-blocks mouse from leaving onto adjacent screens
 })
 
 -- Workspace rules
