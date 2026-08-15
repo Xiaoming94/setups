@@ -183,6 +183,8 @@ require("keybinds.standard")(vars)
 -- ## WINDOWS AND WORKSPACES ##
 -- ############################
 
+require("rules.workspaces")
+
 hl.window_rule({
 	name = "apply_to_webbrowsers",
 	match = {
@@ -229,58 +231,6 @@ hl.window_rule({
 	allows_input = true,
 	immediate = true,
 	confine_pointer = true, -- <--- Hard-blocks mouse from leaving onto adjacent screens
-})
-
--- Workspace rules
-
-hl.workspace_rule({
-	workspace = 1,
-	default_name = "1:",
-})
-
-hl.workspace_rule({
-	workspace = 2,
-	default_name = "2:",
-})
-
-hl.workspace_rule({
-	workspace = 3,
-	default_name = "3:",
-})
-
-hl.workspace_rule({
-	workspace = 4,
-	default_name = "4:",
-})
-
-hl.workspace_rule({
-	workspace = 5,
-	default_name = "5:",
-})
-
-hl.workspace_rule({
-	workspace = 6,
-	default_name = "6:",
-})
-
-hl.workspace_rule({
-	workspace = 7,
-	default_name = "7:",
-})
-
-hl.workspace_rule({
-	workspace = 8,
-	default_name = "8:",
-})
-
-hl.workspace_rule({
-	workspace = 9,
-	default_name = "9:",
-})
-
-hl.workspace_rule({
-	workspace = 10,
-	default_name = "10:",
 })
 
 -- ###############
