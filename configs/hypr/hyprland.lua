@@ -4,27 +4,17 @@
 
 ---@module 'hl'
 
--- This is an example Hyprland config file.
-
 -- Refer to the wiki for more information.
-
 -- https://wiki.hyprland.org/Configuring/Configuring-Hyprland/
-
 -- Please note not all available settings / options are set here.
-
 -- For a full list, see the wiki
-
 -- You can split this configuration into multiple files
-
 -- Create your files separately and then link them to this file like this:
-
 -- source = ~/.config/hypr/myColors.conf
 
---###############
-
---## MONITORS ###
-
---###############
+-- ##############
+-- ## MONITORS ##
+-- ##############
 
 -- See https://wiki.hyprland.org/Configuring/Monitors/
 
@@ -35,33 +25,15 @@ hl.monitor({
 	scale = "auto",
 })
 
---##################
---## MY PROGRAMS ###
---##################
+-- #################
+-- ## MY PROGRAMS ##
+-- #################
 
 -- See https://wiki.hyprland.org/Configuring/Keywords/
 
 local vars = require("vars")
 
 --$runmenu = wofi --show run
-
---################
---## AUTOSTART ###
---################
-
--- Autostart necessary processes (like notifications daemons, status bars, etc.)
-
--- Or execute your favorite apps at launch like this:
-
--- Hyprland tools exec
-
--- exec-once = $terminal
-
--- exec-once = nm-applet &
-
--- exec-once = waybar & hyprpaper & firefox
-
--- Polkit
 
 --############################
 --## ENVIRONMENT VARIABLES ###
@@ -200,30 +172,16 @@ hl.device({
 	sensitivity = -0.5,
 })
 
---###################
---## KEYBINDINGSS ###
---###################
+-- ##################
+-- ## KEYBINDINGSS ##
+-- ##################
 -- Here the keybinds are setup
 -- See https://wiki.hyprland.org/Configuring/Keywords/
 require("keybinds.standard")(vars)
 
---#############################
-
---## WINDOWS AND WORKSPACES ###
-
---#############################
-
--- See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
-
--- See https://wiki.hyprland.org/Configuring/Workspace-Rules/ for workspace rules
-
--- Example windowrule v1
-
--- windowrule = float, ^(kitty)$
-
--- Example windowrule v2
-
--- windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
+-- ############################
+-- ## WINDOWS AND WORKSPACES ##
+-- ############################
 
 hl.window_rule({
 	name = "apply_to_webbrowsers",
@@ -258,9 +216,9 @@ hl.window_rule({
 	workspace = 6,
 })
 
---##############################
---# Game specific window rules #
---##############################
+-- ##############################
+-- # Game specific window rules #
+-- ##############################
 -- Genshin impact
 hl.window_rule({
 	name = "genshin-multi-monitor-lock",
@@ -324,6 +282,10 @@ hl.workspace_rule({
 	workspace = 10,
 	default_name = "10:",
 })
+
+-- ###############
+-- ## AUTOSTART ##
+-- ###############
 
 -- Set the wallpaper (starts hyprpaper first if it isn't already running).
 -- config.reloaded does not fire on the initial startup, so this must also
