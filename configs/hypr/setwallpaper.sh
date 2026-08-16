@@ -1,13 +1,11 @@
-#!/bin/env zsh
+#!/usr/bin/env zsh
 
-hyprctl hyprpaper unload all
-# Sets a random wallpaper with swaybg
+# Sets a random wallpaper with hyprpaper
+# (N) = nullglob, so a missing directory yields nothing instead of a literal glob
+wallpapers=($HOME/.local/share/wallpapers/*.png(N) /usr/share/hypr/wall*(N))
 
-wallpapers=($(ls -d $HOME/.local/share/wallpapers/*.png))
-wallpapers+=($(ls -d /usr/share/hypr/wall*))
+(( $#wallpapers )) || { print -u2 "setwallpaper: no wallpapers found"; exit 1 }
 
-wall=${wallpapers[ $RANDOM % ${#wallpapers[@]} ]}
+wall=${wallpapers[ RANDOM % $#wallpapers + 1 ]}
 
-hyprctl hyprpaper preload $wall
-hyprctl hyprpaper wallpaper ,$wall
-
+hyprctl hyprpaper wallpaper ",$wall"
