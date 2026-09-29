@@ -1,5 +1,5 @@
 ----------------------------------------------
---- file: keybinds/standard.lua
+--- file: keybinds/standard_nav.lua
 --- Author: Ming (mail@zyming.me)
 ---
 --- This file contains navigation buttons without plugins.

@@ -2,7 +2,8 @@
 --- file: keybinds/standard.lua
 --- Author: Ming (mail@zyming.me)
 ---
---- This file contains keybindings defined for standard with no plugins
+--- This file contains keybindings for running certain commands
+--- in a standalone environment
 ----------------------------------------------
 
 local function setup_keybinds(vars)

@@ -179,8 +179,12 @@ hl.device({
 -- ##################
 -- Here the keybinds are setup
 -- See https://wiki.hyprland.org/Configuring/Keywords/
-require("keybinds.standard")(vars)
 require("keybinds.standard_nav")(vars.mainMod)
+if session_type == "noctalia" then
+	require("keybinds.noctalia")(vars)
+else
+	require("keybinds.standard")(vars)
+end
 
 -- ############################
 -- ## WINDOWS AND WORKSPACES ##
