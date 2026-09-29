@@ -18,7 +18,7 @@
 
 -- See https://wiki.hyprland.org/Configuring/Monitors/
 
-local session_type = "noctalia" -- Set to "noctalia to use noctalia settings"
+local session_type = "default" -- Set to "noctalia to use noctalia settings"
 
 hl.monitor({
 	output = "DP-1",
