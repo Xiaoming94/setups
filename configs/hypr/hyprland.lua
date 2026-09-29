@@ -18,6 +18,8 @@
 
 -- See https://wiki.hyprland.org/Configuring/Monitors/
 
+local session_type = "noctalia" -- Set to "noctalia to use noctalia settings"
+
 hl.monitor({
 	output = "DP-1",
 	mode = "preferred",
@@ -199,16 +201,31 @@ local function reload_hyprland()
 
 	local load_hyprpm = [[hyprpm reload -n]]
 
-	hl.exec_cmd(set_wallpaper)
+	if session_type ~= "noctalia" then
+		hl.exec_cmd(set_wallpaper)
+	end
 	hl.exec_cmd(load_hyprpm)
 end
 
--- Autostart
-hl.on("hyprland.start", function()
+local function load_noctalia()
+	hl.exec_cmd("noctalia")
+	hl.exec_cmd("~/bin/myscripts/hyprnoctstart")
+end
+
+local function load_homemade_shell()
 	hl.exec_cmd("waybar")
 	hl.exec_cmd("hypridle")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	hl.exec_cmd("~/bin/myscripts/hyprboot")
+end
+
+-- Autostart
+hl.on("hyprland.start", function()
+	if session_type == "noctalia" then
+		load_noctalia()
+	else
+		load_homemade_shell()
+	end
 
 	reload_hyprland()
 end)
