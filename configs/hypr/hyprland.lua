@@ -33,7 +33,7 @@ hl.monitor({
 
 -- See https://wiki.hyprland.org/Configuring/Keywords/
 
-local vars = require("vars")
+local vars = require("vars.standalone")
 
 --$runmenu = wofi --show run
 
