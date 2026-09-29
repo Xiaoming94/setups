@@ -180,6 +180,7 @@ hl.device({
 -- Here the keybinds are setup
 -- See https://wiki.hyprland.org/Configuring/Keywords/
 require("keybinds.standard")(vars)
+require("keybinds.standard_nav")(vars.mainMod)
 
 -- ############################
 -- ## WINDOWS AND WORKSPACES ##
