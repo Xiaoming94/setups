@@ -160,6 +160,15 @@ exec_once = [
     "~/bin/myscripts/hyprnoctstart",
 ]
 
+# Monitors
+[[rule.monitor_rule]]
+name = "eDP-1"
+width = 1920
+height = 1200
+refresh = 60
+x = 0
+y = 0
+
 [env]
 QT_QPA_PLATFORMTHEME = "qt6ct"
 XCURSOR_SIZE = "24"
@@ -375,3 +384,4 @@ app_id = "dev.noctalia.Noctalia"
 is_floating = 1
 width = 1080
 height = 920
+
