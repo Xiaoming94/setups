@@ -303,6 +303,7 @@ resize_factor = "20"
 "XF86AudioLowerVolume" = "spawn, noctalia msg volume-down"
 "XF86MonBrightnessDown" = "spawn, noctalia msg brightness-down"
 "XF86MonBrightnessUp" = "spawn, noctalia msg brightness-up"
+"$Mod+Shift+s" = "setkeymode, screenshot"
 
 # resizewin
 "$Mod+r" = "setkeymode,resize"
@@ -318,6 +319,15 @@ resize_factor = "20"
 "J" = "resizewin,+0,+$resize_factor"
 "H" = "resizewin,-$resize_factor,+0"
 "L" = "resizewin,+$resize_factor,+0"
+
+# Escape hatch
+"Escape" = "setkeymode, default"
+
+[bind.screenshot.conflict]
+"Print" = ["spawn, noctalia msg screenshot-fullscreen", "setkeymode, default"]
+"CTRL+C" = ["spawn, noctalia msg screenshot-region", "setkeymode, default"]
+
+[bind.screenshot]
 
 # Escape hatch
 "Escape" = "setkeymode, default"
