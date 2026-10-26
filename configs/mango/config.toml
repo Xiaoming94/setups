@@ -178,6 +178,7 @@ term = "wezterm start --cwd ."
 editor = "nvim"
 Mod = "SUPER"
 launcher = "noctalia msg panel-toggle launcher"
+resize_factor = "20"
 
 [bind.default]
 
@@ -185,14 +186,14 @@ launcher = "noctalia msg panel-toggle launcher"
 # key name refer to `xev` or `wev` command output,
 # mod keys name: super,ctrl,alt,shift,none
 # reload config
-"$Mod+r" = "reload_config"
+"$Mod+Shift+r" = "reload_config"
 
 # menu and terminal
 "$Mod+p" = "spawn,$launcher"
 "$Mod+shift+Return" = "spawn,$term"
 
 # exit
-"$Mod+m" = "quit"
+"$Mod+Shift+q" = "quit"
 "$Mod+q" = "killclient,"
 
 # switch window focus
@@ -225,12 +226,10 @@ launcher = "noctalia msg panel-toggle launcher"
 "$Mod+g" = "toggleglobal,"
 "$Mod+w" = "togglejump,"
 "$Mod+shift+space" = "togglefloating,"
-"ALT+a" = "togglemaximizescreen,"
-"ALT+f" = "togglefullscreen,"
+"$Mod+m" = "togglemaximizescreen,"
+"$Mod+f" = "togglefullscreen,"
 "ALT+SHIFT+f" = "togglefakefullscreen,"
-"$Mod+i" = "minimized,"
 "$Mod+o" = "toggleoverlay,"
-"$Mod+SHIFT+I" = "restore_minimized"
 "ALT+z" = "toggle_scratchpad"
 
 # scroller layout
@@ -242,7 +241,7 @@ launcher = "noctalia msg panel-toggle launcher"
 "alt+super+ctrl+Down" = "scroller_stack,down"
 
 #dwindle layout(manual split mode)
-"alt+shift+Return" = "dwindle_toggle_split_direction"
+"$Mod+shift+i" = "dwindle_toggle_split_direction"
 
 # switch layout
 "$Mod+n" = "switch_layout"
@@ -294,21 +293,41 @@ launcher = "noctalia msg panel-toggle launcher"
 "CTRL+SHIFT+Left" = "movewin,-50,+0"
 "CTRL+SHIFT+Right" = "movewin,+50,+0"
 
-# resizewin
-"CTRL+ALT+Up" = "resizewin,+0,-50"
-"CTRL+ALT+Down" = "resizewin,+0,+50"
-"CTRL+ALT+Left" = "resizewin,-50,+0"
-"CTRL+ALT+Right" = "resizewin,+50,+0"
-
 # Noctalia
 "CTRL+$Mod+space" = "spawn,noctalia msg panel-toggle control-center"
+"CTRL+$Mod+L" = "spawn, noctalia msg session lock"
+
+# MISC
+"XF86AudioMute" = "spawn, noctalia msg volume-mute"
+"XF86AudioRaiseVolume" = "spawn, noctalia msg volume-up"
+"XF86AudioLowerVolume" = "spawn, noctalia msg volume-down"
+"XF86MonBrightnessDown" = "spawn, noctalia msg brightness-down"
+"XF86MonBrightnessUp" = "spawn, noctalia msg brightness-up"
+
+# resizewin
+"$Mod+r" = "setkeymode,resize"
+[bind.resize]
+# Arrow keys
+"Up" = "resizewin,+0,-$resize_factor"
+"Down" = "resizewin,+0,+$resize_factor"
+"Left" = "resizewin,-$resize_factor,+0"
+"Right" = "resizewin,+$resize_factor,+0"
+
+# Vim binds
+"K" = "resizewin,+0,-$resize_factor"
+"J" = "resizewin,+0,+$resize_factor"
+"H" = "resizewin,-$resize_factor,+0"
+"L" = "resizewin,+$resize_factor,+0"
+
+# Escape hatch
+"Escape" = "setkeymode, default"
 
 [mousebind.default]
 
 # Mouse Button Bindings
 # btn_left and btn_right can't bind none mod key
 "$Mod+btn_left" = "moveresize,curmove"
-"btn_middle" = "togglemaximizescreen,0"
+"$Mod+btn_middle" = "togglemaximizescreen,0"
 "$Mod+btn_right" = "moveresize,curresize"
 
 [axisbind.default]
