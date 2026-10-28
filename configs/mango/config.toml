@@ -244,7 +244,7 @@ XCURSOR_SIZE = "24"
 "alt+super+ctrl+Down" = "scroller_stack,down"
 
 #dwindle layout(manual split mode)
-"$Mod+shift+i" = "dwindle_toggle_split_direction"
+"$Mod+shift+I" = "dwindle_toggle_split_direction"
 
 # switch layout
 "$Mod+n" = "switch_layout"
@@ -280,10 +280,10 @@ XCURSOR_SIZE = "24"
 "$Mod+shift+9" = "tag,9,0"
 
 # monitor switch
-"alt+shift+Left" = "focusmon,left"
-"alt+shift+Right" = "focusmon,right"
-"$Mod+Alt+Left" = "tagmon,left"
-"$Mod+Alt+Right" = "tagmon,right"
+"alt+$Mod+Left" = "focusmon,left"
+"alt+$Mod+Right" = "focusmon,right"
+"$Mod+Shift+Alt+Left" = "tagmon,left"
+"$Mod+Shift+Alt+Right" = "tagmon,right"
 
 # gaps
 "ALT+SHIFT+X" = "incgaps,1"
