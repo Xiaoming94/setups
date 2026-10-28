@@ -1,3 +1,12 @@
+[var]
+term = "wezterm start --cwd ."
+editor = "nvim"
+Mod = "SUPER"
+launcher = "noctalia msg panel-toggle launcher"
+resize_factor = 20
+gap_inner = 4
+gap_outer = 4
+
 [global]
 
 # More option see https://github.com/DreamMaoMao/mango/wiki/
@@ -138,10 +147,10 @@ swipe_min_threshold = 1
 mouse_natural_scrolling = 0
 
 # Appearance
-gap_inner_horizontal = 5
-gap_inner_vertical = 5
-gap_outer_horizontal = 8
-gap_outer_vertical = 8
+gap_inner_horizontal = $gap_inner
+gap_inner_vertical = $gap_inner
+gap_outer_horizontal = $gap_outer
+gap_outer_vertical = $gap_outer
 scratchpad_width_ratio = 0.8
 scratchpad_height_ratio = 0.9
 border_px = 2
@@ -173,13 +182,6 @@ y = 0
 [env]
 QT_QPA_PLATFORMTHEME = "qt6ct"
 XCURSOR_SIZE = "24"
-
-[var]
-term = "wezterm start --cwd ."
-editor = "nvim"
-Mod = "SUPER"
-launcher = "noctalia msg panel-toggle launcher"
-resize_factor = "20"
 
 [bind.default]
 
